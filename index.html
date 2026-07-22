@@ -3,16 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Volunteer Engagement Consulting — Building Compliant, Resilient, Impactful Volunteer Programs</title>
+<title>Volunteer Engagement Consulting — Strategic Volunteer Program Consulting</title>
+<meta name="description" content="Volunteer Engagement Consulting partners with nonprofits, healthcare organizations, governments, and mission-driven organizations to design resilient, compliant, and people-centered volunteer programs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#032448;
     --navy-deep:#021a35;
+    --navy-soft:#0a3a6b;
     --sage:#637958;
     --sage-l:#8aa17e;
     --gold:#cb7924;
+    --gold-deep:#a8631a;
     --sand:#cbba9e;
     --sand-l:#f3ece1;
     --ink:#1c2530;
@@ -20,7 +24,6 @@
     --paper:#fdfcfb;
     --line:#e4e1da;
     --radius:14px;
-    --serif:'Fraunces', Georgia, serif;
     --sans:'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -29,7 +32,7 @@
     font-family: var(--sans);
     color: var(--ink);
     background: var(--paper);
-    line-height:1.6;
+    line-height:1.65;
     -webkit-font-smoothing: antialiased;
     overflow-x:hidden;
   }
@@ -37,52 +40,62 @@
   a{color:inherit; text-decoration:none;}
   ul{list-style:none;}
   button{font-family:inherit; cursor:pointer;}
-  h1,h2,h3,h4{font-family:var(--serif); color:var(--navy); font-weight:600; letter-spacing:-0.01em;}
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+
+  h1,h2,h3,h4{ font-family:var(--sans); color:var(--navy); letter-spacing:-0.015em; line-height:1.15; }
+  h1{ font-weight:800; }
+  h2{ font-weight:700; }
+  h3,h4{ font-weight:600; }
+
   .eyebrow{
-    font-family:var(--sans); font-size:12px; letter-spacing:0.16em; font-weight:700;
+    font-size:11.5px; letter-spacing:0.2em; font-weight:700;
     text-transform:uppercase; color:var(--gold);
   }
-  .container{max-width:1180px; margin:0 auto; padding:0 32px;}
-  section{padding:110px 0;}
-  @media (max-width: 720px){ section{padding:72px 0;} .container{padding:0 22px;} }
+  .container{max-width:1200px; margin:0 auto; padding:0 32px;}
+  section{padding:120px 0;}
+  @media (max-width: 720px){ section{padding:80px 0;} .container{padding:0 22px;} }
 
-  /* ---------- Pattern Motif (signature Ethiopian-inspired weave) ---------- */
-  .weave{
-    --c: rgba(255,255,255,0.9);
-    width:100%; height:64px;
-    background-image:
-      repeating-linear-gradient(45deg, var(--c) 0 2px, transparent 2px 22px),
-      repeating-linear-gradient(-45deg, var(--c) 0 2px, transparent 2px 22px);
-    background-size: 44px 44px;
-    background-position:center;
-    opacity:0.9;
+  /* ---------- Signature brand pattern (Ethiopian-inspired weave), used sparingly ---------- */
+  .pattern-layer{
+    position:absolute; inset:0; pointer-events:none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><path d='M0 20 L20 0 L40 20 L20 40 Z' fill='none' stroke='white' stroke-width='1.2'/><circle cx='20' cy='20' r='2.4' fill='white'/></svg>");
+    background-size:40px 40px;
+    opacity:0.06;
   }
-  .weave.on-light{--c: rgba(3,36,72,0.55);}
-  .weave-strip{ height:10px; }
+  .pattern-layer.dark{
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><path d='M0 20 L20 0 L40 20 L20 40 Z' fill='none' stroke='%23032448' stroke-width='1.2'/><circle cx='20' cy='20' r='2.4' fill='%23032448'/></svg>");
+    opacity:0.05;
+  }
+  .divider{
+    position:relative; height:56px; background:var(--navy); overflow:hidden;
+  }
+  .divider .pattern-layer{ opacity:0.14; }
+  .divider.on-paper{ background:var(--sand-l); }
+  .divider.on-paper .pattern-layer{ opacity:0.10; }
 
   /* ---------- Header / Nav ---------- */
   header.site-header{
     position:fixed; top:0; left:0; right:0; z-index:1000;
-    background:rgba(253,252,251,0.92);
+    background:rgba(253,252,251,0.94);
     backdrop-filter: blur(10px);
     border-bottom:1px solid var(--line);
-    transition: box-shadow .3s ease;
+    transition: box-shadow .3s ease, padding .3s ease;
   }
-  header.site-header.scrolled{ box-shadow:0 6px 24px rgba(3,36,72,0.08); }
+  header.site-header.scrolled{ box-shadow:0 6px 28px rgba(3,36,72,0.09); }
   .nav-wrap{
-    max-width:1180px; margin:0 auto; padding:16px 32px;
+    max-width:1200px; margin:0 auto; padding:18px 32px;
     display:flex; align-items:center; justify-content:space-between;
     gap:24px;
   }
   .brand{ display:flex; align-items:center; gap:14px; }
-  .brand svg{ width:46px; height:46px; flex-shrink:0; }
-  .brand-text{ font-family:var(--serif); line-height:1.05; }
-  .brand-text .line1{ font-size:15px; font-weight:700; letter-spacing:0.09em; color:var(--navy); }
-  .brand-text .line2{ font-size:10px; letter-spacing:0.22em; color:var(--gold); font-family:var(--sans); font-weight:700; }
+  .brand svg{ width:44px; height:44px; flex-shrink:0; }
+  .brand-text{ line-height:1.1; }
+  .brand-text .line1{ font-size:14px; font-weight:800; letter-spacing:0.08em; color:var(--navy); font-family:var(--sans); }
+  .brand-text .line2{ font-size:9.5px; letter-spacing:0.24em; color:var(--gold); font-family:var(--sans); font-weight:700; }
 
-  nav.main-nav ul{ display:flex; gap:34px; align-items:center; }
+  nav.main-nav ul{ display:flex; gap:36px; align-items:center; }
   nav.main-nav a{
-    font-size:13.5px; font-weight:600; letter-spacing:0.03em; color:var(--ink);
+    font-size:13px; font-weight:500; letter-spacing:0.03em; color:var(--ink);
     position:relative; padding:6px 0; transition:color .2s;
   }
   nav.main-nav a::after{
@@ -90,13 +103,13 @@
     transition:width .25s ease;
   }
   nav.main-nav a:hover{ color:var(--navy); }
-  nav.main-nav a.active{ color:var(--navy); }
+  nav.main-nav a.active{ color:var(--navy); font-weight:700; }
   nav.main-nav a.active::after, nav.main-nav a:hover::after{ width:100%; }
 
   .nav-cta{
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--navy); color:#fff; font-size:13px; font-weight:700;
-    padding:12px 22px; border-radius:100px; border:none; letter-spacing:0.02em;
+    background:var(--navy); color:#fff; font-size:13px; font-weight:600;
+    padding:12px 24px; border-radius:100px; border:none; letter-spacing:0.02em;
     transition:transform .2s ease, background .2s ease;
     white-space:nowrap;
   }
@@ -114,79 +127,88 @@
   .menu-toggle.open span::before{ transform:translateY(9px) rotate(45deg); }
   .menu-toggle.open span::after{ transform:translateY(-9px) rotate(-45deg); }
 
-  @media (max-width: 880px){
+  @media (max-width: 920px){
     .menu-toggle{ display:block; }
     nav.main-nav{
-      position:fixed; top:78px; left:0; right:0; background:var(--paper);
+      position:fixed; top:80px; left:0; right:0; background:var(--paper);
       border-bottom:1px solid var(--line); transform:translateY(-8px); opacity:0; pointer-events:none;
       transition: all .25s ease;
     }
     nav.main-nav.open{ transform:translateY(0); opacity:1; pointer-events:auto; }
-    nav.main-nav ul{ flex-direction:column; padding:24px 32px; gap:18px; align-items:flex-start; }
+    nav.main-nav ul{ flex-direction:column; padding:24px 32px; gap:20px; align-items:flex-start; }
     .nav-cta{ display:none; }
   }
 
   /* ---------- Page transitions ---------- */
-  .page{ display:none; padding-top:78px; animation:fadeIn .5s ease; }
+  .page{ display:none; padding-top:80px; animation:fadeIn .5s ease; }
   .page.active{ display:block; }
   @keyframes fadeIn{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
 
-  /* ---------- Reveal on scroll ---------- */
   .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
   .reveal.in{ opacity:1; transform:translateY(0); }
 
   /* ---------- Hero ---------- */
   .hero{
-    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
-    color:#fff; position:relative; overflow:hidden; padding:120px 0 0;
+    position:relative; min-height:92vh; display:flex; align-items:center;
+    background:
+      linear-gradient(115deg, rgba(3,36,72,0.94) 15%, rgba(3,36,72,0.72) 55%, rgba(3,36,72,0.5) 100%),
+      url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+    color:#fff; overflow:hidden; padding:150px 0 100px;
   }
-  .hero .container{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center; padding-bottom:70px;}
-  .hero-eyebrow{ color:var(--gold); font-size:12px; letter-spacing:0.2em; font-weight:700; text-transform:uppercase; }
-  .hero h1{ color:#fff; font-size:clamp(34px, 5vw, 58px); line-height:1.08; margin:18px 0 24px; font-weight:600; }
-  .hero h1 em{ font-style:normal; color:var(--sand); }
-  .hero p.lead{ font-size:17px; color:rgba(255,255,255,0.82); max-width:520px; margin-bottom:34px; }
+  .hero .pattern-layer{ opacity:0.08; }
+  .hero .container{ position:relative; z-index:2; max-width:800px; }
+  .hero-eyebrow{ color:var(--gold); }
+  .hero h1{ color:#fff; font-size:clamp(38px, 6vw, 72px); line-height:1.05; margin:22px 0 26px; font-weight:800; letter-spacing:-0.02em; }
+  .hero p.lead{ font-size:18px; font-weight:400; color:rgba(255,255,255,0.86); max-width:560px; margin-bottom:38px; }
   .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:14px;
-    padding:15px 30px; border-radius:100px; transition:all .22s ease; border:2px solid transparent;
+  .hero-scroll-cue{
+    position:absolute; bottom:34px; left:50%; transform:translateX(-50%); z-index:2;
+    display:flex; flex-direction:column; align-items:center; gap:8px; color:rgba(255,255,255,0.6); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
   }
-  .btn-gold{ background:var(--gold); color:var(--navy-deep); }
-  .btn-gold:hover{ background:#b56a1c; transform:translateY(-2px); box-shadow:0 10px 24px rgba(203,121,36,0.35); }
-  .btn-outline-light{ border-color:rgba(255,255,255,0.5); color:#fff; }
-  .btn-outline-light:hover{ border-color:#fff; background:rgba(255,255,255,0.08); }
+  .hero-scroll-cue .line{ width:1px; height:34px; background:rgba(255,255,255,0.4); animation:scrollPulse 1.8s ease-in-out infinite; }
+  @keyframes scrollPulse{ 0%,100%{opacity:0.3;} 50%{opacity:1;} }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:14px;
+    padding:16px 32px; border-radius:100px; transition:all .22s ease; border:2px solid transparent;
+    letter-spacing:0.01em;
+  }
+  .btn-gold{ background:var(--gold); color:#fff; }
+  .btn-gold:hover{ background:var(--gold-deep); transform:translateY(-2px); box-shadow:0 12px 28px rgba(203,121,36,0.35); }
+  .btn-outline-light{ border-color:rgba(255,255,255,0.55); color:#fff; }
+  .btn-outline-light:hover{ border-color:#fff; background:rgba(255,255,255,0.1); }
   .btn-navy{ background:var(--navy); color:#fff; }
-  .btn-navy:hover{ background:var(--navy-deep); transform:translateY(-2px); box-shadow:0 10px 24px rgba(3,36,72,0.28); }
+  .btn-navy:hover{ background:var(--navy-deep); transform:translateY(-2px); box-shadow:0 12px 28px rgba(3,36,72,0.28); }
   .btn-outline-navy{ border-color:var(--navy); color:var(--navy); }
   .btn-outline-navy:hover{ background:var(--navy); color:#fff; }
-
-  .hero-art{ position:relative; display:flex; align-items:center; justify-content:center; }
-  .hero-art .arch-wrap{ width:100%; max-width:340px; }
-  .hero-art svg{ width:100%; height:auto; animation: floaty 6s ease-in-out infinite; }
-  @keyframes floaty{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-10px);} }
-  .hero-blob{
-    position:absolute; border-radius:50%; background:rgba(255,255,255,0.05);
-  }
-  .hero-blob.b1{ width:420px; height:420px; top:-160px; right:-140px; }
-  .hero-blob.b2{ width:280px; height:280px; bottom:-140px; left:-100px; background:rgba(203,121,36,0.08);}
-
-  @media (max-width:880px){
-    .hero .container{ grid-template-columns:1fr; text-align:left; padding-bottom:50px; }
-    .hero-art{ order:-1; max-width:220px; margin:0 auto 10px; }
-  }
+  .btn-text{ font-weight:700; font-size:13.5px; color:var(--gold); display:inline-flex; align-items:center; gap:6px; padding:0;}
+  .btn-text svg{ width:14px; height:14px; transition:transform .2s; }
+  .btn-text:hover svg{ transform:translateX(4px); }
 
   /* ---------- Section header pattern ---------- */
-  .sec-head{ max-width:680px; margin-bottom:52px; }
+  .sec-head{ max-width:640px; margin-bottom:56px; }
   .sec-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
-  .sec-head h2{ font-size:clamp(28px,3.4vw,40px); margin-top:12px; }
-  .sec-head p{ color:var(--ink-soft); font-size:16px; margin-top:16px; }
+  .sec-head h2{ font-size:clamp(28px,3.2vw,42px); margin-top:14px; }
+  .sec-head p{ color:var(--ink-soft); font-size:16px; margin-top:16px; font-weight:400; }
+  .kicker-line{ width:44px; height:3px; background:var(--gold); margin-bottom:20px; }
 
   /* ---------- Intro / Story blocks ---------- */
-  .intro-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; }
+  .intro-grid{ display:grid; grid-template-columns:1fr 1fr; gap:76px; align-items:center; }
   .intro-grid img{ border-radius:var(--radius); }
-  .stat-row{ display:flex; gap:44px; margin-top:30px; flex-wrap:wrap; }
-  .stat-row .stat b{ display:block; font-family:var(--serif); font-size:32px; color:var(--navy); }
-  .stat-row .stat span{ font-size:12.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.06em; }
-  @media(max-width:880px){ .intro-grid{ grid-template-columns:1fr; gap:36px; } }
+  .stat-row{ display:flex; gap:48px; margin-top:34px; flex-wrap:wrap; }
+  .stat-row .stat b{ display:block; font-size:32px; font-weight:800; color:var(--navy); }
+  .stat-row .stat span{ font-size:12px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.07em; font-weight:500; }
+  @media(max-width:880px){ .intro-grid{ grid-template-columns:1fr; gap:40px; } }
+
+  /* ---------- Why Choose VEC ---------- */
+  .why-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:2px; background:var(--line); border-radius:var(--radius); overflow:hidden; }
+  .why-card{ background:#fff; padding:40px 30px; transition:background .25s ease; position:relative; }
+  .why-card:hover{ background:var(--sand-l); }
+  .why-card .num{ font-size:12px; font-weight:700; color:var(--gold); letter-spacing:0.1em; }
+  .why-card h3{ font-size:18px; margin:16px 0 10px; }
+  .why-card p{ font-size:13.5px; color:var(--ink-soft); }
+  @media(max-width:960px){ .why-grid{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:560px){ .why-grid{ grid-template-columns:1fr; } }
 
   /* ---------- Cards ---------- */
   .card-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; }
@@ -195,62 +217,65 @@
 
   .card{
     background:#fff; border:1px solid var(--line); border-radius:var(--radius);
-    padding:34px 30px; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    padding:36px 32px; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    position:relative; overflow:hidden;
   }
-  .card:hover{ transform:translateY(-6px); box-shadow:0 16px 40px rgba(3,36,72,0.10); border-color:transparent; }
+  .card:hover{ transform:translateY(-6px); box-shadow:0 18px 44px rgba(3,36,72,0.11); border-color:transparent; }
   .card .icon-box{
     width:52px; height:52px; border-radius:12px; background:var(--sand-l);
-    display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+    display:flex; align-items:center; justify-content:center; margin-bottom:22px;
   }
   .card .icon-box svg{ width:26px; height:26px; }
-  .card h3{ font-size:19px; margin-bottom:10px; }
-  .card p{ color:var(--ink-soft); font-size:14.5px; }
+  .card h3{ font-size:19px; margin-bottom:11px; }
+  .card p{ color:var(--ink-soft); font-size:14.5px; font-weight:400; }
   .card .top-bar{ height:4px; width:44px; border-radius:4px; margin-bottom:22px; }
+  .card .learn-more{ margin-top:20px; display:inline-flex; }
 
   .audience-card{ border-top:4px solid var(--sage); }
   .audience-card:nth-child(2){ border-top-color:var(--navy); }
   .audience-card:nth-child(3){ border-top-color:var(--gold); }
-  .card .cta-link{ display:inline-flex; align-items:center; gap:6px; margin-top:18px; font-size:13.5px; font-weight:700; color:var(--gold); }
-  .card .cta-link svg{ width:14px; height:14px; transition:transform .2s; }
-  .card:hover .cta-link svg{ transform:translateX(4px); }
 
   /* ---------- Trust / stat band ---------- */
-  .band-navy{ background:var(--navy); color:#fff; }
-  .stat-band{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center; }
-  .stat-band .item b{ font-family:var(--serif); font-size:clamp(28px,4vw,42px); color:var(--gold); display:block; }
-  .stat-band .item span{ font-size:12px; letter-spacing:0.05em; color:rgba(255,255,255,0.75); text-transform:uppercase; }
-  @media(max-width:720px){ .stat-band{ grid-template-columns:1fr 1fr; row-gap:32px; } }
+  .band-navy{ background:var(--navy); color:#fff; position:relative; overflow:hidden; }
+  .stat-band{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center; position:relative; z-index:1;}
+  .stat-band .item b{ font-size:clamp(28px,4vw,44px); font-weight:800; color:var(--gold); display:block; }
+  .stat-band .item span{ font-size:11.5px; letter-spacing:0.06em; color:rgba(255,255,255,0.72); text-transform:uppercase; font-weight:500; }
+  @media(max-width:720px){ .stat-band{ grid-template-columns:1fr 1fr; row-gap:36px; } }
 
   /* ---------- Testimonial ---------- */
   .testimonial{
-    background:var(--sand-l); border-radius:var(--radius); padding:48px 46px; position:relative;
+    background:var(--sand-l); border-radius:var(--radius); padding:52px 48px; position:relative;
   }
-  .testimonial .quote-mark{ font-family:var(--serif); font-size:60px; color:var(--sage); line-height:0.5; display:block; margin-bottom:10px; }
-  .testimonial p{ font-size:19px; font-family:var(--serif); color:var(--navy); font-style:italic; max-width:760px; }
-  .testimonial .attrib{ margin-top:22px; font-size:13.5px; font-weight:700; color:var(--ink-soft); font-style:normal; }
+  .testimonial .quote-mark{ font-size:64px; color:var(--sage); line-height:0.5; display:block; margin-bottom:14px; font-weight:800; }
+  .testimonial p{ font-size:20px; color:var(--navy); font-style:italic; font-weight:500; max-width:760px; line-height:1.5; }
+  .testimonial .attrib{ margin-top:24px; font-size:13px; font-weight:700; color:var(--ink-soft); font-style:normal; letter-spacing:0.02em; }
 
   /* ---------- CTA banner ---------- */
   .cta-banner{
-    background:var(--sand); border-radius:var(--radius); padding:44px 46px;
+    background:var(--sand); border-radius:var(--radius); padding:48px 50px;
     display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;
+    position:relative; overflow:hidden;
   }
-  .cta-banner h3{ font-size:24px; max-width:520px; }
+  .cta-banner h3{ font-size:25px; max-width:520px; position:relative; z-index:1; }
+  .cta-banner .btn{ position:relative; z-index:1; }
   @media(max-width:640px){ .cta-banner{ flex-direction:column; align-items:flex-start; } }
 
   /* ---------- Footer ---------- */
-  footer{ background:var(--navy-deep); color:rgba(255,255,255,0.75); padding:70px 0 30px; }
-  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:44px; }
+  footer{ background:var(--navy-deep); color:rgba(255,255,255,0.75); padding:76px 0 30px; position:relative; overflow:hidden; }
+  footer .pattern-layer{ opacity:0.04; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:48px; position:relative; z-index:1;}
   .footer-brand .brand-text .line1{ color:#fff; }
-  .footer-grid p{ font-size:13.5px; margin-top:16px; max-width:280px; color:rgba(255,255,255,0.6); }
-  .footer-grid h4{ color:#fff; font-family:var(--sans); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:18px; }
-  .footer-grid ul li{ margin-bottom:11px; }
-  .footer-grid ul a{ font-size:13.5px; color:rgba(255,255,255,0.65); transition:color .2s; }
+  .footer-grid p{ font-size:13.5px; margin-top:18px; max-width:280px; color:rgba(255,255,255,0.6); font-weight:400; }
+  .footer-grid h4{ color:#fff; font-size:12.5px; letter-spacing:0.09em; text-transform:uppercase; margin-bottom:20px; font-weight:700; }
+  .footer-grid ul li{ margin-bottom:12px; }
+  .footer-grid ul a{ font-size:13.5px; color:rgba(255,255,255,0.65); transition:color .2s; font-weight:400; }
   .footer-grid ul a:hover{ color:var(--gold); }
   .footer-bottom{
-    border-top:1px solid rgba(255,255,255,0.12); padding-top:26px; display:flex;
-    justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12.5px; color:rgba(255,255,255,0.5);
+    border-top:1px solid rgba(255,255,255,0.12); padding-top:28px; display:flex;
+    justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12px; color:rgba(255,255,255,0.5);
+    position:relative; z-index:1; font-weight:400;
   }
-  .social-row{ display:flex; gap:12px; margin-top:18px; }
+  .social-row{ display:flex; gap:12px; margin-top:20px; }
   .social-row a{
     width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.25);
     display:flex; align-items:center; justify-content:center; transition:all .2s;
@@ -260,81 +285,91 @@
   @media(max-width:880px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
   @media(max-width:560px){ .footer-grid{ grid-template-columns:1fr; } }
 
+  /* ---------- Back to top ---------- */
+  #backToTop{
+    position:fixed; bottom:28px; right:28px; width:48px; height:48px; border-radius:50%;
+    background:var(--navy); color:#fff; border:none; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 26px rgba(3,36,72,0.3); opacity:0; pointer-events:none; transform:translateY(10px);
+    transition:all .3s ease; z-index:900;
+  }
+  #backToTop.show{ opacity:1; pointer-events:auto; transform:translateY(0); }
+  #backToTop:hover{ background:var(--gold); }
+  #backToTop svg{ width:18px; height:18px; }
+
   /* ---------- Page Hero (inner pages) ---------- */
   .page-hero{
-    background:var(--navy); color:#fff; padding:150px 0 76px; position:relative; overflow:hidden;
+    background:var(--navy); color:#fff; padding:158px 0 84px; position:relative; overflow:hidden;
   }
+  .page-hero .pattern-layer{ opacity:0.07; }
   .page-hero .eyebrow{ color:var(--gold); }
-  .page-hero h1{ color:#fff; font-size:clamp(32px,4.6vw,50px); margin-top:14px; }
-  .page-hero p{ color:rgba(255,255,255,0.75); margin-top:16px; max-width:560px; font-size:16px; }
+  .page-hero h1{ color:#fff; font-size:clamp(32px,4.6vw,54px); margin-top:16px; font-weight:800; }
+  .page-hero p{ color:rgba(255,255,255,0.78); margin-top:18px; max-width:580px; font-size:16px; font-weight:400; }
 
-  /* ---------- About page ---------- */
-  .founder-panel{
-    background:var(--sand-l); border-radius:var(--radius); padding:44px; display:grid;
-    grid-template-columns:150px 1fr; gap:36px; align-items:center; margin-bottom:60px;
-  }
-  .founder-photo{
-    width:150px; height:150px; border-radius:50%; border:4px solid var(--gold); overflow:hidden;
-    display:flex; align-items:center; justify-content:center; background:var(--navy); color:#fff; font-size:12px;
-  }
-  @media(max-width:640px){ .founder-panel{ grid-template-columns:1fr; text-align:center; } .founder-photo{ margin:0 auto; } }
+  /* ---------- About / Founder ---------- */
+  .founder-section{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center; }
+  .founder-photo-wrap{ position:relative; }
+  .founder-photo-wrap img{ border-radius:var(--radius); width:100%; }
+  .founder-photo-wrap .frame{ position:absolute; inset:-14px; border:2px solid var(--gold); border-radius:var(--radius); z-index:-1; }
+  .founder-credentials{ display:flex; gap:30px; margin-top:28px; flex-wrap:wrap; }
+  .founder-credentials .cred b{ font-size:22px; color:var(--navy); font-weight:800; display:block; }
+  .founder-credentials .cred span{ font-size:11.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.06em; }
+  @media(max-width:880px){ .founder-section{ grid-template-columns:1fr; gap:40px; } }
 
   .values-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
   @media(max-width:960px){ .values-grid{ grid-template-columns:1fr 1fr; } }
   @media(max-width:560px){ .values-grid{ grid-template-columns:1fr; } }
   .value-card{ text-align:left; border-radius:var(--radius); overflow:hidden; }
-  .value-card .arch-top{
-    height:70px; background:var(--sand); border-radius:100px 100px 0 0;
-  }
+  .value-card .arch-top{ height:70px; background:var(--sand); border-radius:100px 100px 0 0; }
   .value-card .body{ background:#fff; border:1px solid var(--line); border-top:none; padding:24px 22px 28px; border-radius:0 0 var(--radius) var(--radius); }
-  .value-card h4{ font-size:17px; margin-bottom:8px; }
-  .value-card p{ font-size:13.5px; color:var(--ink-soft); }
+  .value-card h4{ font-size:17px; margin-bottom:9px; }
+  .value-card p{ font-size:13.5px; color:var(--ink-soft); font-weight:400; }
 
-  .timeline{ display:flex; justify-content:space-between; position:relative; margin-top:20px; flex-wrap:wrap; gap:30px; }
+  .timeline{ display:flex; justify-content:space-between; position:relative; margin-top:24px; flex-wrap:wrap; gap:30px; }
   .timeline::before{ content:''; position:absolute; top:9px; left:0; right:0; height:2px; background:var(--line); z-index:0; }
   .timeline .tl-item{ position:relative; z-index:1; flex:1; min-width:140px; }
-  .timeline .dot{ width:18px; height:18px; border-radius:50%; background:var(--sage); margin-bottom:16px; }
-  .timeline .yr{ font-family:var(--serif); font-size:22px; color:var(--navy); font-weight:700; }
-  .timeline .lbl{ font-size:13.5px; color:var(--ink-soft); margin-top:4px; }
+  .timeline .dot{ width:18px; height:18px; border-radius:50%; background:var(--sage); margin-bottom:18px; }
+  .timeline .yr{ font-size:22px; color:var(--navy); font-weight:800; }
+  .timeline .lbl{ font-size:13.5px; color:var(--ink-soft); margin-top:5px; font-weight:400; }
 
   /* ---------- Services page ---------- */
   .tier{
     background:#fff; border:1px solid var(--line); border-radius:var(--radius);
-    padding:38px 40px; display:grid; grid-template-columns:1fr auto; gap:30px; align-items:center; margin-bottom:26px;
+    padding:40px 42px; display:grid; grid-template-columns:1fr auto; gap:30px; align-items:center; margin-bottom:26px;
+    position:relative; overflow:hidden;
   }
-  .tier.featured{ border-color:var(--gold); background:linear-gradient(180deg,#fff, var(--sand-l)); box-shadow:0 14px 40px rgba(203,121,36,0.12); }
+  .tier.featured{ border-color:var(--gold); background:linear-gradient(180deg,#fff, var(--sand-l)); box-shadow:0 16px 44px rgba(203,121,36,0.13); }
   .tier .tag{ font-size:11.5px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); }
-  .tier h3{ font-size:23px; margin:10px 0 8px; }
-  .tier p.desc{ color:var(--ink-soft); font-size:14.5px; max-width:560px; }
-  .tier ul{ margin-top:16px; }
-  .tier ul li{ font-size:13.5px; color:var(--ink); position:relative; padding-left:20px; margin-bottom:7px; }
+  .tier h3{ font-size:24px; margin:12px 0 10px; }
+  .tier p.desc{ color:var(--ink-soft); font-size:14.5px; max-width:560px; font-weight:400; }
+  .tier ul{ margin-top:18px; }
+  .tier ul li{ font-size:13.5px; color:var(--ink); position:relative; padding-left:20px; margin-bottom:8px; font-weight:400; }
   .tier ul li::before{ content:'—'; position:absolute; left:0; color:var(--sage); }
   @media(max-width:760px){ .tier{ grid-template-columns:1fr; } }
 
   .process-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:30px; margin-top:10px; }
   @media(max-width:880px){ .process-grid{ grid-template-columns:1fr 1fr; } }
   @media(max-width:520px){ .process-grid{ grid-template-columns:1fr; } }
-  .process-step{ border-left:3px solid var(--sage); padding-left:20px; }
-  .process-step .num{ font-family:var(--serif); color:var(--gold); font-size:26px; font-weight:700; }
-  .process-step h4{ margin:8px 0 8px; font-size:16.5px; }
-  .process-step p{ font-size:13.5px; color:var(--ink-soft); }
+  .process-step{ border-left:3px solid var(--sage); padding-left:22px; }
+  .process-step .num{ color:var(--gold); font-size:26px; font-weight:800; }
+  .process-step h4{ margin:10px 0 9px; font-size:16.5px; }
+  .process-step p{ font-size:13.5px; color:var(--ink-soft); font-weight:400; }
 
   .services-list-full{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
   @media(max-width:960px){ .services-list-full{ grid-template-columns:1fr 1fr; } }
   @media(max-width:560px){ .services-list-full{ grid-template-columns:1fr; } }
 
-  /* ---------- Blog page ---------- */
-  .blog-filter{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:44px; }
+  /* ---------- Insights (Blog) page ---------- */
+  .blog-filter{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:46px; }
   .filter-pill{
-    padding:10px 22px; border-radius:100px; font-size:13px; font-weight:700; background:var(--sand-l);
+    padding:11px 24px; border-radius:100px; font-size:13px; font-weight:600; background:var(--sand-l);
     color:var(--navy); border:1px solid transparent; transition:all .2s;
   }
   .filter-pill.active{ background:var(--navy); color:#fff; }
   .filter-pill:hover{ border-color:var(--navy); }
 
-  .search-box{ position:relative; max-width:340px; margin-bottom:44px; }
+  .search-box{ position:relative; max-width:340px; margin-bottom:46px; }
   .search-box input{
-    width:100%; padding:13px 20px 13px 42px; border-radius:100px; border:1px solid var(--line);
+    width:100%; padding:14px 20px 14px 42px; border-radius:100px; border:1px solid var(--line);
     font-family:var(--sans); font-size:13.5px; outline:none; transition:border-color .2s;
   }
   .search-box input:focus{ border-color:var(--gold); }
@@ -342,40 +377,55 @@
 
   .featured-post{
     display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line); border-radius:var(--radius);
-    overflow:hidden; margin-bottom:60px;
+    overflow:hidden; margin-bottom:64px;
   }
-  .featured-post .ph{ background:linear-gradient(135deg, #35505e, #263a45); min-height:280px; position:relative; }
-  .featured-post .ph::after{ content:'Featured photograph'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.55); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;}
-  .featured-post .body{ padding:40px; display:flex; flex-direction:column; justify-content:center; }
+  .featured-post .ph{ min-height:300px; position:relative; background-size:cover; background-position:center; }
+  .featured-post .body{ padding:44px; display:flex; flex-direction:column; justify-content:center; }
   .featured-post .tag{ color:var(--sage); font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; }
-  .featured-post h3{ font-size:25px; margin:12px 0 14px; }
-  .featured-post p{ color:var(--ink-soft); font-size:14.5px; }
-  @media(max-width:760px){ .featured-post{ grid-template-columns:1fr; } .featured-post .ph{ min-height:180px; } }
+  .featured-post h3{ font-size:26px; margin:14px 0 16px; }
+  .featured-post p{ color:var(--ink-soft); font-size:14.5px; font-weight:400; }
+  @media(max-width:760px){ .featured-post{ grid-template-columns:1fr; } .featured-post .ph{ min-height:200px; } }
 
-  .post-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-bottom:60px; }
+  .post-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-bottom:64px; }
   @media(max-width:880px){ .post-grid{ grid-template-columns:1fr 1fr; } }
   @media(max-width:560px){ .post-grid{ grid-template-columns:1fr; } }
   .post-card{ border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#fff; transition:transform .25s, box-shadow .25s; }
-  .post-card:hover{ transform:translateY(-6px); box-shadow:0 16px 36px rgba(3,36,72,0.10); }
-  .post-card .ph{ height:160px; background:linear-gradient(135deg,#3f5b69,#2a3d47); position:relative;}
-  .post-card .ph::after{ content:'Photo'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.5); font-size:11px; letter-spacing:0.1em; text-transform:uppercase;}
-  .post-card .body{ padding:22px 22px 26px; }
+  .post-card:hover{ transform:translateY(-6px); box-shadow:0 18px 40px rgba(3,36,72,0.11); }
+  .post-card .ph{ height:170px; position:relative; background-size:cover; background-position:center;}
+  .post-card .body{ padding:24px 24px 28px; }
   .post-card .tag{ color:var(--sage); font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; }
-  .post-card h4{ font-size:16.5px; margin:10px 0 12px; line-height:1.35; }
+  .post-card h4{ font-size:16.5px; margin:11px 0 13px; line-height:1.35; }
   .post-card a.read{ font-size:13px; font-weight:700; color:var(--gold); display:inline-flex; align-items:center; gap:6px; }
 
   .newsletter-band{
-    background:var(--navy); color:#fff; border-radius:var(--radius); padding:44px 46px;
+    background:var(--navy); color:#fff; border-radius:var(--radius); padding:48px 50px;
     display:flex; justify-content:space-between; align-items:center; gap:30px; flex-wrap:wrap;
+    position:relative; overflow:hidden;
   }
-  .newsletter-band h3{ color:#fff; font-size:22px; max-width:480px; }
-  .newsletter-band p{ color:rgba(255,255,255,0.7); font-size:13.5px; margin-top:8px; }
+  .newsletter-band h3{ color:#fff; font-size:23px; max-width:480px; position:relative; z-index:1; }
+  .newsletter-band p{ color:rgba(255,255,255,0.7); font-size:13.5px; margin-top:9px; position:relative; z-index:1; font-weight:400; }
+  .newsletter-band .btn{ position:relative; z-index:1; }
+
+  /* ---------- Contact page ---------- */
+  .contact-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; }
+  @media(max-width:880px){ .contact-grid{ grid-template-columns:1fr; } }
+  .contact-info-item{ display:flex; gap:16px; margin-bottom:28px; }
+  .contact-info-item .ic{ width:44px; height:44px; border-radius:10px; background:var(--sand-l); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .contact-info-item .ic svg{ width:20px; height:20px; }
+  .contact-info-item h4{ font-size:15px; margin-bottom:4px; }
+  .contact-info-item p{ font-size:13.5px; color:var(--ink-soft); font-weight:400; }
+  .form-panel{ background:#fff; border-radius:14px; padding:40px; border:1px solid var(--line); }
+  .form-row{ margin-bottom:18px; }
+  .form-row label{ font-size:12.5px; font-weight:700; letter-spacing:0.03em; display:block; margin-bottom:7px; color:var(--navy); }
+  .form-row input, .form-row textarea, .form-row select{
+    width:100%; padding:13px 15px; border-radius:8px; border:1px solid var(--line); font-family:inherit; font-size:14px; outline:none; transition:border-color .2s;
+  }
+  .form-row input:focus, .form-row textarea:focus, .form-row select:focus{ border-color:var(--gold); }
 
   /* misc */
   .split-2{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:50px; align-items:start; }
   @media(max-width:880px){ .split-2{ grid-template-columns:1fr; } }
-  .kicker-line{ width:44px; height:3px; background:var(--gold); margin-bottom:18px; }
-  .muted{ color:var(--ink-soft); }
+  .muted{ color:var(--ink-soft); font-weight:400; }
 </style>
 </head>
 <body>
@@ -383,7 +433,7 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="siteHeader">
   <div class="nav-wrap">
-    <a href="#home" class="brand" onclick="goTo('home')">
+    <a href="#home" class="brand" onclick="goTo('home')" aria-label="Volunteer Engagement Consulting home">
       <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <pattern id="weavePatNav" width="14" height="14" patternUnits="userSpaceOnUse">
@@ -402,15 +452,16 @@
         <span class="line2">— CONSULTING —</span>
       </span>
     </a>
-    <nav class="main-nav" id="mainNav">
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
       <ul>
         <li><a href="#home" class="nav-link active" data-page="home" onclick="goTo('home')">Home</a></li>
         <li><a href="#about" class="nav-link" data-page="about" onclick="goTo('about')">About</a></li>
         <li><a href="#services" class="nav-link" data-page="services" onclick="goTo('services')">Services</a></li>
-        <li><a href="#blog" class="nav-link" data-page="blog" onclick="goTo('blog')">Blog</a></li>
+        <li><a href="#insights" class="nav-link" data-page="insights" onclick="goTo('insights')">Insights</a></li>
+        <li><a href="#contact" class="nav-link" data-page="contact" onclick="goTo('contact')">Contact</a></li>
       </ul>
     </nav>
-    <a href="#contact" class="nav-cta" onclick="goTo('services')">Book a Consultation</a>
+    <a href="#contact" class="nav-cta" onclick="goTo('contact')">Book a Consultation</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span></button>
   </div>
 </header>
@@ -419,47 +470,29 @@
 <main id="page-home" class="page active">
 
   <section class="hero">
-    <div class="hero-blob b1"></div>
-    <div class="hero-blob b2"></div>
+    <div class="pattern-layer" aria-hidden="true"></div>
     <div class="container">
-      <div>
-        <div class="hero-eyebrow reveal">Strategic Volunteer Program Consulting</div>
-        <h1 class="reveal">Building <em>resilient</em> volunteer programs for organizations that can't afford to get it wrong.</h1>
-        <p class="lead reveal">Volunteer Engagement Consulting partners with hospices, hospitals, and mission-driven organizations to turn volunteer engagement into a governed, compliant, and scalable organizational asset — not an afterthought.</p>
-        <div class="hero-ctas reveal">
-          <a href="#services" class="btn btn-gold" onclick="goTo('services')">Book an Operational Audit</a>
-          <a href="#about" class="btn btn-outline-light" onclick="goTo('about')">Meet the Founder</a>
-        </div>
-      </div>
-      <div class="hero-art">
-        <div class="arch-wrap">
-          <svg viewBox="0 0 240 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="weavePatHero" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M0 10 L10 0 L20 10 L10 20 Z" fill="none" stroke="#ffffff" stroke-width="1.6" opacity="0.85"/>
-                <circle cx="10" cy="10" r="2" fill="#ffffff" opacity="0.85"/>
-              </pattern>
-            </defs>
-            <rect x="34" y="34" width="34" height="76" fill="url(#weavePatHero)"/>
-            <rect x="172" y="34" width="34" height="76" fill="url(#weavePatHero)"/>
-            <rect x="34" y="122" width="34" height="64" fill="url(#weavePatHero)"/>
-            <rect x="172" y="122" width="34" height="64" fill="url(#weavePatHero)"/>
-            <rect x="103" y="122" width="34" height="64" fill="#ffffff"/>
-            <path d="M22 110 Q120 62 218 110" stroke="#ffffff" stroke-width="16" fill="none" stroke-linecap="round"/>
-          </svg>
-        </div>
+      <div class="hero-eyebrow eyebrow reveal">Strategic Volunteer Program Consulting</div>
+      <h1 class="reveal">Designing the Future of Volunteer Engagement</h1>
+      <p class="lead reveal">Volunteer Engagement Consulting partners with nonprofits, healthcare organizations, governments, and mission-driven organizations to design resilient, compliant, and people-centered volunteer programs.</p>
+      <div class="hero-ctas reveal">
+        <a href="#contact" class="btn btn-gold" onclick="goTo('contact')">Book a Consultation</a>
+        <a href="#services" class="btn btn-outline-light" onclick="goTo('services')">Explore Our Services</a>
       </div>
     </div>
-    <div class="weave weave-strip" style="background-color:var(--navy-deep); opacity:0.5;"></div>
+    <div class="hero-scroll-cue" aria-hidden="true"><span>Scroll</span><span class="line"></span></div>
   </section>
+
+  <div class="divider"><div class="pattern-layer" aria-hidden="true"></div></div>
 
   <section>
     <div class="container">
       <div class="intro-grid">
         <div class="reveal">
+          <div class="kicker-line"></div>
           <div class="eyebrow">Who We Are</div>
           <h2 style="margin-top:12px;">A specialist consultancy — not a generalist nonprofit vendor.</h2>
-          <p class="muted" style="margin-top:18px; font-size:16px;">Volunteer Engagement Consulting exists to help organizations build volunteer programs that are compliant, resilient, and built for long-term impact. Rather than focusing only on recruitment, we build the governance frameworks, retention systems, and compliance infrastructure that let volunteer programs scale with confidence.</p>
+          <p class="muted" style="margin-top:20px; font-size:16px;">Volunteer Engagement Consulting exists to help organizations build volunteer programs that are compliant, resilient, and built for long-term impact. Rather than focusing only on recruitment, we build the governance frameworks, retention systems, and compliance infrastructure that let volunteer programs scale with confidence.</p>
           <div class="stat-row">
             <div class="stat"><b>120+</b><span>Organizations Served</span></div>
             <div class="stat"><b>10 yrs</b><span>Field Experience</span></div>
@@ -467,14 +500,15 @@
           </div>
         </div>
         <div class="reveal">
-          <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?q=80&w=1000&auto=format&fit=crop" alt="Volunteer coordinator reviewing program documentation" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop" alt="Consulting team reviewing a volunteer program strategy in a leadership meeting" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
-  <section style="background:var(--sand-l);">
-    <div class="container">
+  <section style="background:var(--sand-l); position:relative;">
+    <div class="pattern-layer dark" aria-hidden="true" style="opacity:0.04;"></div>
+    <div class="container" style="position:relative;">
       <div class="sec-head center reveal">
         <div class="eyebrow">Who We Work With</div>
         <h2>Every organization's compliance and retention pressures look different.</h2>
@@ -485,19 +519,19 @@
           <div class="icon-box" style="background:#dfe7db;"><svg viewBox="0 0 24 24" fill="none" stroke="#637958" stroke-width="1.8"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2" stroke-linecap="round"/></svg></div>
           <h3>Hospice Programs</h3>
           <p>CMS compliance audits and the 5% volunteer utilization requirement, handled before it becomes a survey finding.</p>
-          <a href="#services" class="cta-link" onclick="goTo('services')">Explore Hospice Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#services" class="btn-text learn-more" onclick="goTo('services')">Explore Hospice Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="card audience-card reveal">
           <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" stroke-linejoin="round"/></svg></div>
           <h3>Hospital Systems</h3>
           <p>Operational reviews and patient-support volunteer structures that hold up across departments and shifts.</p>
-          <a href="#services" class="cta-link" onclick="goTo('services')">Explore Hospital Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#services" class="btn-text learn-more" onclick="goTo('services')">Explore Hospital Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="card audience-card reveal">
           <div class="icon-box" style="background:#f3e3cf;"><svg viewBox="0 0 24 24" fill="none" stroke="#cb7924" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3>Nonprofit &amp; Corporate CSR</h3>
           <p>Strategic program setup, volunteer coaching, and infrastructure that scales with organizational growth.</p>
-          <a href="#services" class="cta-link" onclick="goTo('services')">Explore Nonprofit Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#services" class="btn-text learn-more" onclick="goTo('services')">Explore Nonprofit Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
     </div>
@@ -506,30 +540,37 @@
   <section>
     <div class="container">
       <div class="sec-head reveal">
-        <div class="eyebrow">Why Organizations Choose VEC</div>
-        <h2>Compliance and compassion, built as one system.</h2>
+        <div class="kicker-line"></div>
+        <div class="eyebrow">Why Choose VEC</div>
+        <h2>Trusted expertise, built for organizations that can't afford to get it wrong.</h2>
       </div>
-      <div class="card-grid">
-        <div class="card reveal">
-          <div class="top-bar" style="background:var(--sage);"></div>
-          <h3>Governance-First Design</h3>
-          <p>Every framework is built to hold up under audit and outlast any single coordinator or leadership change.</p>
+      <div class="why-grid reveal">
+        <div class="why-card">
+          <div class="num">01</div>
+          <h3>Strategic Expertise</h3>
+          <p>A decade of hands-on volunteer leadership translated into frameworks built for real operational conditions.</p>
         </div>
-        <div class="card reveal">
-          <div class="top-bar" style="background:var(--navy);"></div>
-          <h3>Hands-On Field Expertise</h3>
-          <p>A decade of ground-level volunteer coordination translated into practical, field-tested frameworks.</p>
+        <div class="why-card">
+          <div class="num">02</div>
+          <h3>Compliance-Driven Solutions</h3>
+          <p>Governance and documentation designed to hold up under CMS review and organizational audit alike.</p>
         </div>
-        <div class="card reveal">
-          <div class="top-bar" style="background:var(--gold);"></div>
-          <h3>Measurable Outcomes</h3>
-          <p>Retention scorecards, utilization audits, and clear reporting — no black boxes, no surprises.</p>
+        <div class="why-card">
+          <div class="num">03</div>
+          <h3>Customized Volunteer Frameworks</h3>
+          <p>No templates. Every engagement is scoped to your organization's structure, risk profile, and growth stage.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">04</div>
+          <h3>Sustainable Community Impact</h3>
+          <p>Systems designed to outlast any single coordinator, so community impact compounds over time.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="band-navy">
+    <div class="pattern-layer" aria-hidden="true"></div>
     <div class="container">
       <div class="stat-band">
         <div class="item reveal"><b>120+</b><span>Organizations Served</span></div>
@@ -553,8 +594,9 @@
   <section style="padding-top:0;">
     <div class="container">
       <div class="cta-banner reveal">
+        <div class="pattern-layer dark" aria-hidden="true" style="opacity:0.05;"></div>
         <h3>Ready to protect your program's future? Let's talk through where things stand.</h3>
-        <a href="#services" class="btn btn-navy" onclick="goTo('services')">Schedule a Consultation</a>
+        <a href="#contact" class="btn btn-navy" onclick="goTo('contact')">Schedule a Consultation</a>
       </div>
     </div>
   </section>
@@ -565,7 +607,7 @@
 <main id="page-about" class="page">
 
   <section class="page-hero">
-    <div class="hero-blob b1" style="width:320px;height:320px;top:-120px;right:-100px;"></div>
+    <div class="pattern-layer" aria-hidden="true"></div>
     <div class="container">
       <div class="eyebrow">About Volunteer Engagement Consulting</div>
       <h1>Building stronger volunteer systems for sustainable impact.</h1>
@@ -584,28 +626,40 @@
           <p class="muted" style="margin-top:14px; font-size:15.5px;">Every framework, recommendation, and partnership is guided by one purpose: empowering organizations to create meaningful volunteer experiences that deliver lasting, measurable impact.</p>
         </div>
         <div>
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop" alt="Leadership team in a strategy meeting" loading="lazy" style="border-radius:14px;">
+          <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1000&auto=format&fit=crop" alt="Professional workshop session with a diverse team of consultants" loading="lazy" style="border-radius:14px;">
         </div>
       </div>
     </div>
   </section>
 
-  <section style="background:var(--sand-l);">
-    <div class="container">
-      <div class="founder-panel reveal">
-        <div class="founder-photo">PHOTO</div>
-        <div>
-          <div class="eyebrow">Build. Empower. Lead.</div>
-          <h2 style="margin-top:8px; font-size:28px;">Hayat Nawd</h2>
-          <p class="muted" style="margin-top:6px; font-weight:600; color:var(--ink);">Founder &amp; Principal Consultant</p>
-          <p class="muted" style="margin-top:14px; font-size:15px; max-width:640px;">Hayat brings a decade of ground-level volunteer coordination — translated into the governance frameworks that keep hospice, hospital, and nonprofit programs compliant, resilient, and human. Her practice began in the field, chasing paperwork and scheduling shifts, where she learned that compliance and compassion aren't in tension — they're the same system, built well. Today she leads Volunteer Engagement Consulting's strategic partnerships across hospice, hospital, and corporate CSR programs nationwide.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="divider on-paper"><div class="pattern-layer dark" aria-hidden="true"></div></div>
 
   <section>
     <div class="container">
+      <div class="founder-section reveal">
+        <div class="founder-photo-wrap">
+          <div class="frame"></div>
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop" alt="Portrait of Hayat Nawd, Founder and Principal Consultant of Volunteer Engagement Consulting">
+        </div>
+        <div>
+          <div class="eyebrow">Build. Empower. Lead.</div>
+          <h2 style="margin-top:10px; font-size:32px;">Hayat Nawd</h2>
+          <p class="muted" style="margin-top:6px; font-weight:700; color:var(--navy); font-size:15px;">Founder &amp; Principal Consultant</p>
+          <p class="muted" style="margin-top:18px; font-size:15.5px;">Hayat brings a decade of ground-level volunteer coordination — translated into the governance frameworks that keep hospice, hospital, and nonprofit programs compliant, resilient, and human. Her practice began in the field, chasing paperwork and scheduling shifts, where she learned that compliance and compassion aren't in tension — they're the same system, built well.</p>
+          <p class="muted" style="margin-top:14px; font-size:15.5px;">Today she leads Volunteer Engagement Consulting's strategic partnerships across hospice, hospital, and corporate CSR programs nationwide, advising executive teams and boards on the governance structures that let volunteer programs scale without losing their culture.</p>
+          <div class="founder-credentials">
+            <div class="cred"><b>120+</b><span>Organizations Advised</span></div>
+            <div class="cred"><b>10 yrs</b><span>Practice Experience</span></div>
+            <div class="cred"><b>2016</b><span>Practice Founded</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--sand-l); position:relative;">
+    <div class="pattern-layer dark" aria-hidden="true" style="opacity:0.04;"></div>
+    <div class="container" style="position:relative;">
       <div class="sec-head center reveal">
         <div class="eyebrow">Brand Values</div>
         <h2>What guides every engagement</h2>
@@ -644,7 +698,7 @@
     </div>
   </section>
 
-  <section style="background:var(--sand-l);">
+  <section>
     <div class="container">
       <div class="sec-head reveal">
         <div class="eyebrow">How the Practice Grew</div>
@@ -662,8 +716,9 @@
   <section style="padding-top:0;">
     <div class="container">
       <div class="cta-banner reveal">
+        <div class="pattern-layer dark" aria-hidden="true" style="opacity:0.05;"></div>
         <h3>Want to talk through your program before committing to anything?</h3>
-        <a href="#services" class="btn btn-navy" onclick="goTo('services')">Schedule a Consultation</a>
+        <a href="#contact" class="btn btn-navy" onclick="goTo('contact')">Schedule a Consultation</a>
       </div>
     </div>
   </section>
@@ -674,7 +729,7 @@
 <main id="page-services" class="page">
 
   <section class="page-hero">
-    <div class="hero-blob b1" style="width:320px;height:320px;top:-120px;right:-100px;"></div>
+    <div class="pattern-layer" aria-hidden="true"></div>
     <div class="container">
       <div class="eyebrow">How We Help</div>
       <h1>Services built around your outcome.</h1>
@@ -685,6 +740,7 @@
   <section>
     <div class="container">
       <div class="sec-head reveal">
+        <div class="kicker-line"></div>
         <div class="eyebrow">Engagement Tiers</div>
         <h2>Three ways to strengthen your program</h2>
       </div>
@@ -700,7 +756,7 @@
             <li>Recognition cadence and retention scorecard</li>
           </ul>
         </div>
-        <a href="#contact" class="btn btn-navy" onclick="goTo('services')">Inquire About This Service</a>
+        <a href="#contact" class="btn btn-navy" onclick="goTo('contact')">Inquire About This Service</a>
       </div>
 
       <div class="tier featured reveal">
@@ -714,7 +770,7 @@
             <li>90-day corrective roadmap if under threshold</li>
           </ul>
         </div>
-        <a href="#contact" class="btn btn-gold" onclick="goTo('services')" style="color:var(--navy-deep);">Inquire About This Service</a>
+        <a href="#contact" class="btn btn-gold" onclick="goTo('contact')">Inquire About This Service</a>
       </div>
 
       <div class="tier reveal">
@@ -728,13 +784,14 @@
             <li>Leadership coaching for program managers</li>
           </ul>
         </div>
-        <a href="#contact" class="btn btn-navy" onclick="goTo('services')">Inquire About This Service</a>
+        <a href="#contact" class="btn btn-navy" onclick="goTo('contact')">Inquire About This Service</a>
       </div>
     </div>
   </section>
 
-  <section style="background:var(--sand-l);">
-    <div class="container">
+  <section style="background:var(--sand-l); position:relative;">
+    <div class="pattern-layer dark" aria-hidden="true" style="opacity:0.04;"></div>
+    <div class="container" style="position:relative;">
       <div class="sec-head reveal">
         <div class="eyebrow">Full Capability Set</div>
         <h2>Consulting across the full volunteer lifecycle</h2>
@@ -744,41 +801,49 @@
           <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M4 20V10M12 20V4M20 20v-7" stroke-linecap="round"/></svg></div>
           <h3 style="font-size:16.5px;">Volunteer Program Design</h3>
           <p style="font-size:13.5px;">Structuring new programs from the ground up, with clear roles, workflows, and reporting.</p>
+          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="card reveal">
           <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M3 12h4l3 8 4-16 3 8h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3 style="font-size:16.5px;">Engagement Strategy</h3>
           <p style="font-size:13.5px;">Recruitment, onboarding, and recognition strategies calibrated to your volunteer base.</p>
+          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="card reveal">
           <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M9 12l2 2 4-4M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" stroke-linejoin="round"/></svg></div>
           <h3 style="font-size:16.5px;">Risk &amp; Compliance</h3>
           <p style="font-size:13.5px;">Utilization audits, documentation review, and survey-readiness for regulated environments.</p>
+          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="card reveal">
           <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg></div>
           <h3 style="font-size:16.5px;">Policies &amp; Frameworks</h3>
           <p style="font-size:13.5px;">Handbooks, role documentation, and governance policies that outlast any one coordinator.</p>
+          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="card reveal">
           <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3 style="font-size:16.5px;">Capacity Building &amp; Training</h3>
           <p style="font-size:13.5px;">Leadership coaching and staff training that build lasting internal capability.</p>
+          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="card reveal">
           <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M3 3v18h18M7 15l4-4 4 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3 style="font-size:16.5px;">Program Evaluation</h3>
           <p style="font-size:13.5px;">Retention scorecards and outcome measurement tied directly to organizational goals.</p>
+          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="card reveal">
           <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M12 2l2.4 5.5L20 8l-4 4.2.9 6L12 15.8 7.1 18.2l.9-6L4 8l5.6-.5z" stroke-linejoin="round"/></svg></div>
           <h3 style="font-size:16.5px;">Governance Support</h3>
           <p style="font-size:13.5px;">Board- and executive-level guidance on volunteer program oversight and accountability.</p>
+          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="card reveal">
           <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3 style="font-size:16.5px;">Custom Consulting</h3>
           <p style="font-size:13.5px;">Tailored engagements for organizations with unique operational or regulatory needs.</p>
+          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
     </div>
@@ -815,50 +880,25 @@
     </div>
   </section>
 
-  <section id="contact" style="background:var(--sand-l);">
+  <section style="padding-top:0;">
     <div class="container">
-      <div class="split-2">
-        <div class="reveal">
-          <div class="eyebrow">Get Started</div>
-          <h2 style="margin-top:10px;">Not sure which service fits? Start with a free scoping call.</h2>
-          <p class="muted" style="margin-top:14px; font-size:15px;">Tell us a bit about your program and we'll recommend the right starting point — no obligation, no sales pressure.</p>
-          <div class="stat-row" style="margin-top:30px;">
-            <div class="stat"><b>20 min</b><span>Free Scoping Call</span></div>
-            <div class="stat"><b>48 hrs</b><span>Typical Response Time</span></div>
-          </div>
-        </div>
-        <form class="reveal" onsubmit="handleFormSubmit(event)" style="background:#fff; border-radius:14px; padding:34px; border:1px solid var(--line);">
-          <div style="margin-bottom:16px;">
-            <label style="font-size:12.5px; font-weight:700; letter-spacing:0.04em; display:block; margin-bottom:6px;">Full Name</label>
-            <input required type="text" style="width:100%; padding:12px 14px; border-radius:8px; border:1px solid var(--line); font-family:inherit;">
-          </div>
-          <div style="margin-bottom:16px;">
-            <label style="font-size:12.5px; font-weight:700; letter-spacing:0.04em; display:block; margin-bottom:6px;">Organization</label>
-            <input required type="text" style="width:100%; padding:12px 14px; border-radius:8px; border:1px solid var(--line); font-family:inherit;">
-          </div>
-          <div style="margin-bottom:16px;">
-            <label style="font-size:12.5px; font-weight:700; letter-spacing:0.04em; display:block; margin-bottom:6px;">Email</label>
-            <input required type="email" style="width:100%; padding:12px 14px; border-radius:8px; border:1px solid var(--line); font-family:inherit;">
-          </div>
-          <div style="margin-bottom:22px;">
-            <label style="font-size:12.5px; font-weight:700; letter-spacing:0.04em; display:block; margin-bottom:6px;">What's driving the call?</label>
-            <textarea rows="3" style="width:100%; padding:12px 14px; border-radius:8px; border:1px solid var(--line); font-family:inherit; resize:vertical;"></textarea>
-          </div>
-          <button type="submit" class="btn btn-navy" style="width:100%; justify-content:center;">Book a Scoping Call</button>
-        </form>
+      <div class="cta-banner reveal">
+        <div class="pattern-layer dark" aria-hidden="true" style="opacity:0.05;"></div>
+        <h3>Not sure which service fits? Start with a free 20-minute scoping call.</h3>
+        <a href="#contact" class="btn btn-navy" onclick="goTo('contact')">Book a Scoping Call</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- ============ BLOG ============ -->
-<main id="page-blog" class="page">
+<!-- ============ INSIGHTS (Blog) ============ -->
+<main id="page-insights" class="page">
 
   <section class="page-hero">
-    <div class="hero-blob b1" style="width:320px;height:320px;top:-120px;right:-100px;"></div>
+    <div class="pattern-layer" aria-hidden="true"></div>
     <div class="container">
-      <div class="eyebrow">Insights &amp; Resources</div>
+      <div class="eyebrow">Resources &amp; Insights</div>
       <h1>Practical notes from the field.</h1>
       <p>Short, specific writing on retention, compliance, and program design — for the people actually running volunteer programs.</p>
     </div>
@@ -869,7 +909,7 @@
 
       <div class="search-box reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
-        <input type="text" placeholder="Search articles..." id="blogSearch" oninput="filterPosts()">
+        <input type="text" placeholder="Search articles..." id="blogSearch" oninput="filterPosts()" aria-label="Search articles">
       </div>
 
       <div class="blog-filter reveal">
@@ -880,24 +920,24 @@
       </div>
 
       <div class="reveal">
-        <h3 style="font-size:14px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:20px;">Featured Article</h3>
+        <h3 style="font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:22px; font-weight:700;">Featured Article</h3>
       </div>
       <div class="featured-post reveal">
-        <div class="ph"></div>
+        <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=900&auto=format&fit=crop');"></div>
         <div class="body">
           <div class="tag">Hospice</div>
           <h3>Meeting the CMS 5% Utilization Rate Without the Scramble</h3>
           <p>Most programs fail this requirement quietly, months before a survey ever catches it. Here's the three-number check that catches it early — and the documentation trail that keeps you audit-ready year-round.</p>
-          <a href="#" class="cta-link" style="margin-top:18px;">Read the full article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="btn-text learn-more" style="margin-top:18px;">Read the full article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
       <div class="reveal">
-        <h3 style="font-size:14px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:20px;">Recent Articles</h3>
+        <h3 style="font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:22px; font-weight:700;">Recent Articles</h3>
       </div>
       <div class="post-grid" id="postGrid">
         <div class="post-card reveal" data-cat="csr" data-title="5 signs your volunteer program is outgrowing its structure">
-          <div class="ph"></div>
+          <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=700&auto=format&fit=crop');"></div>
           <div class="body">
             <div class="tag">Corporate CSR</div>
             <h4>5 Signs Your Volunteer Program Is Outgrowing Its Structure</h4>
@@ -905,7 +945,7 @@
           </div>
         </div>
         <div class="post-card reveal" data-cat="hospital" data-title="what hospital systems get wrong about patient-support volunteers">
-          <div class="ph"></div>
+          <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1580281657702-257584239a55?q=80&w=700&auto=format&fit=crop');"></div>
           <div class="body">
             <div class="tag">Hospital Systems</div>
             <h4>What Hospital Systems Get Wrong About Patient-Support Volunteers</h4>
@@ -913,7 +953,7 @@
           </div>
         </div>
         <div class="post-card reveal" data-cat="hospice" data-title="the 90-day cliff why new volunteers really quit">
-          <div class="ph"></div>
+          <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=700&auto=format&fit=crop');"></div>
           <div class="body">
             <div class="tag">Hospice</div>
             <h4>The 90-Day Cliff: Why New Volunteers Really Quit</h4>
@@ -921,7 +961,7 @@
           </div>
         </div>
         <div class="post-card reveal" data-cat="csr" data-title="building a corporate csr program that outlasts one champion">
-          <div class="ph"></div>
+          <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=700&auto=format&fit=crop');"></div>
           <div class="body">
             <div class="tag">Corporate CSR</div>
             <h4>Building a Corporate CSR Program That Outlasts One Champion</h4>
@@ -929,7 +969,7 @@
           </div>
         </div>
         <div class="post-card reveal" data-cat="hospice" data-title="a volunteer handbook template that actually gets read">
-          <div class="ph"></div>
+          <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=700&auto=format&fit=crop');"></div>
           <div class="body">
             <div class="tag">Hospice</div>
             <h4>A Volunteer Handbook Template That Actually Gets Read</h4>
@@ -937,7 +977,7 @@
           </div>
         </div>
         <div class="post-card reveal" data-cat="hospital" data-title="reading your utilization report like an auditor would">
-          <div class="ph"></div>
+          <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=700&auto=format&fit=crop');"></div>
           <div class="body">
             <div class="tag">Hospital Systems</div>
             <h4>Reading Your Utilization Report Like an Auditor Would</h4>
@@ -948,11 +988,12 @@
       <p id="noResults" style="display:none; color:var(--ink-soft); margin-bottom:40px;">No articles match your search — try a different term or category.</p>
 
       <div class="newsletter-band reveal">
+        <div class="pattern-layer" aria-hidden="true" style="opacity:0.05;"></div>
         <div>
           <h3>Download our free 5-Point Volunteer Onboarding Checklist</h3>
           <p>One page. No fluff. Sent straight to your inbox along with the monthly field-notes newsletter.</p>
         </div>
-        <a href="#" class="btn btn-gold" style="color:var(--navy-deep);" onclick="handleFormSubmit(event)">Get the Guide</a>
+        <a href="#" class="btn btn-gold" onclick="handleFormSubmit(event)">Get the Guide</a>
       </div>
 
     </div>
@@ -960,12 +1001,91 @@
 
 </main>
 
+<!-- ============ CONTACT ============ -->
+<main id="page-contact" class="page">
+
+  <section class="page-hero">
+    <div class="pattern-layer" aria-hidden="true"></div>
+    <div class="container">
+      <div class="eyebrow">Get Started</div>
+      <h1>Let's talk through your program.</h1>
+      <p>Tell us a bit about your organization and we'll recommend the right starting point — no obligation, no sales pressure.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="kicker-line"></div>
+          <div class="eyebrow">Contact Information</div>
+          <h2 style="margin-top:12px; font-size:26px;">We typically respond within 48 hours.</h2>
+          <div style="margin-top:34px;">
+            <div class="contact-info-item">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7l-8 5-8-5z"/></svg></div>
+              <div><h4>Email</h4><p>hello@vecconsulting.com</p></div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2.1z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><h4>Phone</h4><p>+1 (416) 555-0198</p></div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M12 21s7-6.5 7-11.5A7 7 0 105 9.5C5 14.5 12 21 12 21z" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3"/></svg></div>
+              <div><h4>Based In</h4><p>Toronto, ON — serving organizations across North America</p></div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18" stroke-linecap="round"/></svg></div>
+              <div><h4>Availability</h4><p>Free 20-minute scoping calls, Monday–Friday</p></div>
+            </div>
+          </div>
+        </div>
+
+        <form class="form-panel reveal" onsubmit="handleFormSubmit(event)">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+            <div class="form-row">
+              <label for="cf-name">Full Name</label>
+              <input required type="text" id="cf-name" autocomplete="name">
+            </div>
+            <div class="form-row">
+              <label for="cf-org">Organization</label>
+              <input required type="text" id="cf-org" autocomplete="organization">
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+            <div class="form-row">
+              <label for="cf-email">Email</label>
+              <input required type="email" id="cf-email" autocomplete="email">
+            </div>
+            <div class="form-row">
+              <label for="cf-type">Organization Type</label>
+              <select id="cf-type">
+                <option>Hospice Program</option>
+                <option>Hospital System</option>
+                <option>Nonprofit / Corporate CSR</option>
+                <option>Government</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="cf-message">What's driving the call?</label>
+            <textarea rows="4" id="cf-message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-navy" style="width:100%; justify-content:center; margin-top:6px;">Book a Consultation</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
 <!-- ============ FOOTER ============ -->
 <footer>
+  <div class="pattern-layer" aria-hidden="true"></div>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#home" class="brand" onclick="goTo('home')">
+        <a href="#home" class="brand" onclick="goTo('home')" aria-label="Volunteer Engagement Consulting home">
           <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="18" y="18" width="18" height="46" fill="none" stroke="#fff" stroke-width="1.4" opacity="0.9"/>
             <rect x="84" y="18" width="18" height="46" fill="none" stroke="#fff" stroke-width="1.4" opacity="0.9"/>
@@ -983,7 +1103,7 @@
         <div class="social-row">
           <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5.01A2.5 2.5 0 014.98 3.5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.9 8.65 22 10.9 22 14.05V21h-4v-6.3c0-1.5-.03-3.42-2.08-3.42-2.08 0-2.4 1.63-2.4 3.31V21H9z"/></svg></a>
           <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.3c0-.87.24-1.46 1.5-1.46h1.6V3.9c-.28-.04-1.24-.12-2.36-.12-2.33 0-3.93 1.42-3.93 4.03V10.5H8v3h2.31V21h3.19z"/></svg></a>
-          <a href="#" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7l-8 5-8-5z"/></svg></a>
+          <a href="mailto:hello@vecconsulting.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7l-8 5-8-5z"/></svg></a>
         </div>
       </div>
       <div>
@@ -992,7 +1112,8 @@
           <li><a href="#home" onclick="goTo('home')">Home</a></li>
           <li><a href="#about" onclick="goTo('about')">About</a></li>
           <li><a href="#services" onclick="goTo('services')">Services</a></li>
-          <li><a href="#blog" onclick="goTo('blog')">Blog</a></li>
+          <li><a href="#insights" onclick="goTo('insights')">Insights</a></li>
+          <li><a href="#contact" onclick="goTo('contact')">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -1009,7 +1130,7 @@
         <ul>
           <li><a href="mailto:hello@vecconsulting.com">hello@vecconsulting.com</a></li>
           <li><a href="tel:+14165550198">+1 (416) 555-0198</a></li>
-          <li><a href="#services" onclick="goTo('services')">Book a Consultation</a></li>
+          <li><a href="#contact" onclick="goTo('contact')">Book a Consultation</a></li>
         </ul>
       </div>
     </div>
@@ -1020,8 +1141,11 @@
   </div>
 </footer>
 
+<button id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
 <script>
-  // ---- Page navigation ----
   function goTo(pageId){
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page-' + pageId).classList.add('active');
@@ -1035,26 +1159,23 @@
     initReveal();
   }
 
-  // load correct page from hash on first load
   window.addEventListener('DOMContentLoaded', () => {
     const hash = window.location.hash.replace('#','');
-    const valid = ['home','about','services','blog'];
+    const valid = ['home','about','services','insights','contact'];
     if (valid.includes(hash)) goTo(hash);
     initReveal();
   });
 
-  // ---- Header scroll shadow ----
   window.addEventListener('scroll', () => {
     document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
+    document.getElementById('backToTop').classList.toggle('show', window.scrollY > 500);
   });
 
-  // ---- Mobile menu ----
   document.getElementById('menuToggle').addEventListener('click', () => {
     document.getElementById('mainNav').classList.toggle('open');
     document.getElementById('menuToggle').classList.toggle('open');
   });
 
-  // ---- Scroll reveal ----
   function initReveal(){
     const els = document.querySelectorAll('.page.active .reveal');
     const obs = new IntersectionObserver((entries) => {
@@ -1063,7 +1184,6 @@
     els.forEach(el => obs.observe(el));
   }
 
-  // ---- Blog filter + search ----
   let currentCat = 'all';
   function setCategory(cat, btn){
     currentCat = cat;
@@ -1085,7 +1205,6 @@
     document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
   }
 
-  // ---- Form submit (placeholder) ----
   function handleFormSubmit(e){
     e.preventDefault();
     alert('Thank you — this is a design prototype. In production this form will send your request directly to the VEC team.');
