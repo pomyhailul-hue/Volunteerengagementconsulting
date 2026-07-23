@@ -1,0 +1,63 @@
+---
+layout: default
+---
+{% assign words = content | strip_html | number_of_words %}
+{% assign read_time = words | divided_by: site.words_per_minute %}
+{% if read_time == 0 %}{% assign read_time = 1 %}{% endif %}
+
+<article>
+  <header class="post-header">
+    <div class="pattern-layer" aria-hidden="true"></div>
+    <div class="container">
+      <span class="cat-badge">{{ page.category }}</span>
+      <h1>{{ page.title }}</h1>
+      <div class="post-meta-row">
+        <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+        <span class="dot"></span>
+        <span>{{ read_time }} min read</span>
+        <span class="dot"></span>
+        <span>By {{ site.author.name }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="post-featured-image reveal">
+    <div class="img-inner">
+      <div class="pattern-layer" aria-hidden="true"></div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 19.5V6a2 2 0 012-2h9l5 5v10.5a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 014 19.5z" stroke-linejoin="round"/><path d="M15 4v4a1 1 0 001 1h4" stroke-linejoin="round"/><circle cx="10" cy="12" r="1.6"/><path d="M6 18l4-4 3 3 4.5-4.5L20 16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+
+  <div class="post-body-wrap">
+    <div class="post-body reveal">
+      {{ content }}
+    </div>
+
+    {% include share-buttons.html %}
+
+    {% include newsletter-cta.html %}
+
+    {% include coffee-cta.html %}
+
+    {% if page.previous or page.next %}
+    <nav class="post-nav" aria-label="Article navigation">
+      {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" rel="prev">
+        <span class="pn-label">← Previous</span>
+        <span class="pn-title">{{ page.next.title }}</span>
+      </a>
+      {% else %}<span></span>{% endif %}
+      {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="pn-next" rel="next">
+        <span class="pn-label">Next →</span>
+        <span class="pn-title">{{ page.previous.title }}</span>
+      </a>
+      {% else %}<span></span>{% endif %}
+    </nav>
+    {% endif %}
+
+    {% include related-posts.html %}
+
+    {% include comments.html %}
+  </div>
+</article>

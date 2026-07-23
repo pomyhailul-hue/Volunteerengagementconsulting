@@ -1,0 +1,28 @@
+{% assign related = "" | split: "" %}
+{% for p in site.posts %}
+  {% if p.url != page.url and p.category == page.category %}
+    {% assign related = related | push: p %}
+  {% endif %}
+{% endfor %}
+{% assign related_count = related | size %}
+{% if related_count < 3 %}
+  {% for p in site.posts %}
+    {% if p.url != page.url and p.category != page.category %}
+      {% assign already_in = false %}
+      {% for r in related %}{% if r.url == p.url %}{% assign already_in = true %}{% endif %}{% endfor %}
+      {% unless already_in %}{% assign related = related | push: p %}{% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% assign related_limited = related | slice: 0, 3 %}
+
+{% if related_limited.size > 0 %}
+<div class="related-posts-section reveal">
+  <div class="sec-label">Related Articles</div>
+  <div class="related-grid">
+    {% for p in related_limited %}
+      {% include post-card.html post=p %}
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
