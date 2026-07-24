@@ -453,8 +453,12 @@ title: Volunteer Engagement Consulting
     display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line); border-radius:var(--radius);
     overflow:hidden; margin-bottom:64px; background:#fff;
   }
-  <div class="fp-image" style="background-image:url('{{ featured.image }}'); background-size:cover; background-position:center;">
-        </div>
+  .featured-post .fp-image{
+    min-height:300px; position:relative; overflow:hidden;
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .featured-post .fp-image svg{ width:56px; height:56px; opacity:0.85; position:relative; z-index:1; }
   .featured-post .fp-image svg{ width:56px; height:56px; opacity:0.85; position:relative; z-index:1; }
   .featured-post .fp-body{ padding:44px; display:flex; flex-direction:column; justify-content:center; }
   .featured-post .fp-body h3{ font-size:26px; margin:16px 0 14px; line-height:1.3; }
