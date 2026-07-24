@@ -41,9 +41,30 @@
     font-size:11.5px; letter-spacing:0.2em; font-weight:700;
     text-transform:uppercase; color:var(--gold);
   }
-  .container{max-width:1200px; margin:0 auto; padding:0 32px;}
-  section{padding:120px 0;}
-  @media (max-width: 720px){ section{padding:80px 0;} .container{padding:0 22px;} }
+  ..container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 32px;
+}
+
+section{
+    padding:120px 0;
+}
+
+.mission-section{
+    padding-top:30px;
+    padding-bottom:120px;
+}
+
+@media (max-width:720px){
+    section{
+        padding:80px 0;
+    }
+
+    .container{
+        padding:0 22px;
+    }
+}
 
   /* ---------- Approved VEC brand pattern (exact supplied artwork) ---------- */
   .pattern-layer{
@@ -338,14 +359,19 @@
   .page-hero p{ color:rgba(255,255,255,0.78); margin-top:18px; max-width:580px; font-size:16px; font-weight:400; }
 
   /* ---------- About / Founder ---------- */
-  .founder-section{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center; }
+.founder-section{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:60px;
+    align-items:start;
+}
   .founder-photo-wrap{ position:relative; }
   .founder-photo-wrap img{ border-radius:var(--radius); width:100%; }
   .founder-photo-wrap .frame{ position:absolute; inset:-14px; border:2px solid var(--gold); border-radius:var(--radius); z-index:-1; }
   .founder-credentials{ display:flex; gap:30px; margin-top:28px; flex-wrap:wrap; }
   .founder-credentials .cred b{ font-size:22px; color:var(--navy); font-weight:800; display:block; }
   .founder-credentials .cred span{ font-size:11.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.06em; }
-  @media(max-width:880px){ .founder-section{ grid-template-columns:1fr; gap:40px; } }
+  @media(max-width:880px){ .founder-section{ grid-template-columns:1fr 1.1fr; gap:40px; } }
 
   .values-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
   @media(max-width:960px){ .values-grid{ grid-template-columns:1fr 1fr; } }
@@ -354,7 +380,16 @@
   @media(max-width:640px){ .mission-vision-grid{ grid-template-columns:1fr; } }
   .value-card{ text-align:left; border-radius:var(--radius); overflow:hidden; display:flex; flex-direction:column; height:100%; }
   .value-card .arch-top{ height:70px; flex-shrink:0; background:var(--sand); border-radius:100px 100px 0 0; }
-  .value-card .body{ background:#fff; border:1px solid var(--line); border-top:none; padding:24px 22px 28px; border-radius:0 0 var(--radius) var(--radius); flex:1; display:flex; flex-direction:column; }
+  .value-card .body{
+  background:#fff;
+  border:1px solid var(--line);
+  border-top:none;
+  padding:32px 28px 36px;
+  border-radius:0 0 var(--radius) var(--radius);
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
   .value-card h4{ font-size:17px; margin-bottom:9px; }
   .value-card p{ font-size:13.5px; color:var(--ink-soft); font-weight:400; }
 
