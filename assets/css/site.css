@@ -83,8 +83,21 @@
   .brand{ display:flex; align-items:center; gap:16px; }
   .brand-logo{ height:48px; width:auto; display:block; flex-shrink:0; }
   .brand-text{ line-height:1.1; }
-  .brand-text .line1{ font-size:14px; font-weight:800; letter-spacing:0.08em; color:var(--navy); font-family:var(--sans); }
-  .brand-text .line2{ font-size:9.5px; letter-spacing:0.24em; color:var(--gold); font-family:var(--sans); font-weight:700; }
+  .brand-text .line1{
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.04em;
+    color:var(--navy);
+    font-family:'Cormorant Garamond', serif;
+}
+
+.brand-text .line2{
+    font-size:9.5px;
+    letter-spacing:0.24em;
+    color:var(--gold);
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+}
 
   nav.main-nav ul{ display:flex; gap:36px; align-items:center; }
   nav.main-nav a{
