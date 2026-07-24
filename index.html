@@ -354,7 +354,10 @@ title: Volunteer Engagement Consulting
   /* ---------- About / Founder ---------- */
   .founder-section{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center; }
   .founder-photo-wrap{ position:relative; }
-  .founder-photo-wrap img{ border-radius:var(--radius); width:100%; }
+.founder-photo-wrap img{
+    border-radius:var(--radius);
+    width:100%;
+}
   .founder-photo-wrap .frame{ position:absolute; inset:-14px; border:2px solid var(--gold); border-radius:var(--radius); z-index:-1; }
   .founder-credentials{ display:flex; gap:30px; margin-top:28px; flex-wrap:wrap; }
   .founder-credentials .cred b{ font-size:22px; color:var(--navy); font-weight:800; display:block; }
@@ -379,8 +382,19 @@ title: Volunteer Engagement Consulting
     flex-direction:column;
     justify-content:center;
 }
-  .value-card h4{ font-size:17px; margin-bottom:9px; }
-  .value-card p{ font-size:13.5px; color:var(--ink-soft); font-weight:400; }
+  .value-card h4{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:18px;
+    color:var(--navy);
+}
+
+.value-card p{
+    font-size:16px;
+    line-height:1.8;
+    color:var(--ink-soft);
+    font-weight:400;
+}
 
   .timeline{ display:flex; justify-content:space-between; position:relative; margin-top:24px; flex-wrap:wrap; gap:30px; }
   .timeline::before{ content:''; position:absolute; top:9px; left:0; right:0; height:2px; background:var(--line); z-index:0; }
@@ -708,8 +722,8 @@ title: Volunteer Engagement Consulting
 
   <div class="divider on-paper"><div class="pattern-layer dark" aria-hidden="true"></div></div>
 
-  <section>
-    <div class="container">
+<section class="founder-wrapper">
+        <div class="container">
       <div class="founder-section reveal">
         <div class="founder-photo-wrap">
           <div class="frame"></div>
@@ -731,7 +745,6 @@ title: Volunteer Engagement Consulting
       </div>
     </div>
   </section>
-
   <section class="mission-section">
     <div class="container">
       <div class="mission-vision-grid">
@@ -764,7 +777,7 @@ title: Volunteer Engagement Consulting
           <div class="arch-top"></div>
           <div class="body">
             <h4>Purpose</h4>
-            <p>Everything begins with creating meaningful impact through volunteerism. Every strategy is designed to strengthen communities and advance organizational missions.</p>
+            <p>Building meaningful volunteer programs that strengthen communities and advance organizational missions.</p>
           </div>
         </div>
         <div class="value-card reveal">
