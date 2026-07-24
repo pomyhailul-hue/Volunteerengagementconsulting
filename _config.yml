@@ -12,8 +12,8 @@ description: >-
 # --- IMPORTANT: set these two for GitHub Pages -----------------------------
 # If this repo is served at https://<user>.github.io/  -> url: "https://<user>.github.io", baseurl: ""
 # If this repo is served at https://<user>.github.io/<repo>/ -> url: "https://<user>.github.io", baseurl: "/<repo>"
-url: "https://your-username.github.io"
-baseurl: ""
+url: "https://pomyhailul-hue.github.io"
+baseurl: "/Volunteerengagementconsulting"
 
 # --- Author (used by jekyll-seo-tag / schema.org) --------------------------
 author:
@@ -23,14 +23,14 @@ logo: /assets/images/logo-navy.png
 # --- Social links — replace with your real profile URLs -------------------
 # These feed the footer icons, the Contact page icons, and the blog share buttons.
 social:
-  instagram: "https://instagram.com/YOUR_HANDLE"
-  facebook: "https://facebook.com/YOUR_PAGE"
-  linkedin: "https://linkedin.com/company/YOUR_COMPANY"
+  instagram: "https://www.instagram.com/volunteerengagementconsulting"
+  facebook: "https://www.facebook.com/volunteerengagementconsulting"
+  linkedin: "https://www.linkedin.com/volunteerengagementconsulting"
   twitter: ""   # optional, leave blank to hide the X/Twitter share button
 
 # --- Buy Me a Coffee --------------------------------------------------------
 buymeacoffee:
-  url: "https://www.buymeacoffee.com/YOUR_USERNAME"
+  url: "https://buymeacoffee.com/hayatn"
 
 # --- Giscus (GitHub Discussions-powered comments) --------------------------
 # Create the discussion category at https://giscus.app after enabling
