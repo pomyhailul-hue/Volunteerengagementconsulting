@@ -2,6 +2,7 @@
 title: "Volunteer Confirmation Must-Haves"
 date: 2026-05-04 09:00:00 -0400
 category: Volunteer Communication
+image: https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop
 description: "A thoughtful, clear, and well-timed confirmation email or \"Know Before You Go\" message can make all the difference in how volunteers show up, feel, and contribute."
 ---
 
@@ -64,9 +65,3 @@ Volunteers are giving their time, energy, and heart to support your mission and 
 When volunteers feel prepared and valued before they even arrive, they're far more likely to return, refer others, and stay committed. Take the time to get this first step right, it's a small investment with a big return.
 
 Schedule a free consultation, and let's build a clear, consistent communication plan that keeps your volunteers informed, engaged, and coming back.
-
-Enjoyed this post? Support My Consulting Journey!
-
-Hey there! I've recently launched my own consulting business, and I'm excited to share insights, tips, and real-world lessons as I grow. If you found this content helpful or inspiring, consider supporting and Buy Me a Coffee.
-
-Every coffee helps fuel the mission — one idea at a time. Thanks for being part of the journey!

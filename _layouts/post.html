@@ -8,7 +8,7 @@ layout: default
 <article>
   <header class="post-header">
     <div class="pattern-layer" aria-hidden="true"></div>
-    <div class="container">
+    <div class="container" style="padding-left:32px; padding-right:32px;">
       <span class="cat-badge">{{ page.category }}</span>
       <h1>{{ page.title }}</h1>
       <div class="post-meta-row">
@@ -22,9 +22,7 @@ layout: default
   </header>
 
   <div class="post-featured-image reveal">
-    <div class="img-inner">
-      <div class="pattern-layer" aria-hidden="true"></div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 19.5V6a2 2 0 012-2h9l5 5v10.5a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 014 19.5z" stroke-linejoin="round"/><path d="M15 4v4a1 1 0 001 1h4" stroke-linejoin="round"/><circle cx="10" cy="12" r="1.6"/><path d="M6 18l4-4 3 3 4.5-4.5L20 16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="img-inner" style="background-image:url('{{ page.image }}'); background-size:cover; background-position:center;">
     </div>
   </div>
 

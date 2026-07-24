@@ -2,6 +2,7 @@
 title: "Your Secret Weapon for Volunteer Success"
 date: 2026-06-15 09:00:00 -0400
 category: Volunteer Onboarding
+image: https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop
 description: "First impressions matter—and for volunteers, onboarding is that moment. It's your chance to show new volunteers that they're not just needed—they're valued."
 ---
 
@@ -60,8 +61,3 @@ And the truth is: onboarding doesn't need to be complicated—it just needs to b
 
 Want to strengthen your volunteer program starting with better onboarding? Book a free 30-minute consultation and we'll walk through your current approach, identify easy wins, and map out next steps for deeper engagement.
 
-Enjoyed this post? Support My Consulting Journey!
-
-Hey there! I've recently launched my own consulting business, and I'm excited to share insights, tips, and real-world lessons as I grow. If you found this content helpful or inspiring, consider supporting and Buy Me a Coffee.
-
-Every coffee helps fuel the mission — one idea at a time. Thanks for being part of the journey!
