@@ -54,8 +54,7 @@ permalink: /blog/
     {% if read_time == 0 %}{% assign read_time = 1 %}{% endif %}
     <a class="post-card-link" href="{{ featured.url | relative_url }}">
       <div class="featured-post reveal" data-category="{{ featured.category | slugify }}" data-title="{{ featured.title | downcase }}" data-date="{{ featured.date | date: '%s' }}">
-        <div class="fp-image">
-         <div class="fp-image" style="background-image:url('{{ featured.image }}'); background-size:cover; background-position:center;">
+        <div class="fp-image" style="background-image:url('{{ featured.image }}'); background-size:cover; background-position:center;">
         </div>
         <div class="fp-body">
           <span class="cat-badge">{{ featured.category }}</span>
