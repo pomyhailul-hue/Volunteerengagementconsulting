@@ -1,0 +1,136 @@
+---
+layout: default
+title: Insights
+description: "Practical notes from the field — short, specific writing on retention, compliance, and program design for the people actually running volunteer programs."
+permalink: /blog/
+---
+
+<section class="page-hero">
+  <div class="pattern-layer" aria-hidden="true"></div>
+  <div class="container">
+    <div class="eyebrow">Insights</div>
+    <h1>Practical notes from the field.</h1>
+    <p>Short, specific writing on retention, compliance, and program design — for the people actually running volunteer programs.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    {% assign all_posts = site.posts %}
+    {% assign featured = all_posts.first %}
+    {% assign rest = all_posts | slice: 1, 999 %}
+
+    <div class="blog-toolbar reveal">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
+        <input type="text" placeholder="Search articles..." id="blogSearch" aria-label="Search articles">
+      </div>
+      <div class="blog-sort">
+        <label for="blogSort">Sort</label>
+        <select id="blogSort">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="blog-filter reveal" id="blogFilter">
+      <button class="filter-pill active" data-cat="all" type="button">All</button>
+      {% assign cats = "" | split: "" %}
+      {% for p in all_posts %}
+        {% unless cats contains p.category %}{% assign cats = cats | push: p.category %}{% endunless %}
+      {% endfor %}
+      {% for c in cats %}
+      <button class="filter-pill" data-cat="{{ c | slugify }}" type="button">{{ c }}</button>
+      {% endfor %}
+    </div>
+
+    {% if featured %}
+    <div class="reveal">
+      <h3 style="font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:22px; font-weight:700;">Featured Article</h3>
+    </div>
+    {% assign words = featured.content | strip_html | number_of_words %}
+    {% assign read_time = words | divided_by: site.words_per_minute %}
+    {% if read_time == 0 %}{% assign read_time = 1 %}{% endif %}
+    <a class="post-card-link" href="{{ featured.url | relative_url }}">
+      <div class="featured-post reveal" data-category="{{ featured.category | slugify }}" data-title="{{ featured.title | downcase }}" data-date="{{ featured.date | date: '%s' }}">
+        <div class="fp-image">
+          <div class="pattern-layer" aria-hidden="true"></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><path d="M4 19.5V6a2 2 0 012-2h9l5 5v10.5a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 014 19.5z" stroke-linejoin="round"/><path d="M15 4v4a1 1 0 001 1h4" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="fp-body">
+          <span class="cat-badge">{{ featured.category }}</span>
+          <h3>{{ featured.title }}</h3>
+          <p class="pc-excerpt">{{ featured.description }}</p>
+          <div class="pc-meta"><span>{{ featured.date | date: "%b %-d, %Y" }}</span><span class="dot"></span><span>{{ read_time }} min read</span></div>
+        </div>
+      </div>
+    </a>
+    {% endif %}
+
+    <div class="reveal">
+      <h3 style="font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); margin:48px 0 22px; font-weight:700;">All Articles</h3>
+    </div>
+    <div class="post-grid" id="postGrid">
+      {% for p in rest %}
+        <div class="reveal" data-date="{{ p.date | date: '%s' }}">
+          {% include post-card.html post=p %}
+        </div>
+      {% endfor %}
+    </div>
+    <p id="noResults">No articles match your search — try a different term or category.</p>
+
+  </div>
+</section>
+
+<script>
+  (function () {
+    var searchInput = document.getElementById('blogSearch');
+    var sortSelect = document.getElementById('blogSort');
+    var filterWrap = document.getElementById('blogFilter');
+    var grid = document.getElementById('postGrid');
+    var noResults = document.getElementById('noResults');
+    var currentCat = 'all';
+
+    function getCards() {
+      return Array.prototype.slice.call(grid.querySelectorAll('.post-card'));
+    }
+
+    function applyFilters() {
+      var q = (searchInput.value || '').toLowerCase().trim();
+      var visible = 0;
+      getCards().forEach(function (card) {
+        var wrapper = card.closest('[data-date]');
+        var matchesCat = currentCat === 'all' || card.dataset.category === currentCat;
+        var matchesSearch = !q || card.dataset.title.indexOf(q) !== -1;
+        var show = matchesCat && matchesSearch;
+        wrapper.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    function applySort() {
+      var order = sortSelect.value;
+      var wrappers = Array.prototype.slice.call(grid.children);
+      wrappers.sort(function (a, b) {
+        var da = parseInt(a.dataset.date, 10), db = parseInt(b.dataset.date, 10);
+        return order === 'newest' ? db - da : da - db;
+      });
+      wrappers.forEach(function (w) { grid.appendChild(w); });
+    }
+
+    filterWrap.addEventListener('click', function (e) {
+      var btn = e.target.closest('.filter-pill');
+      if (!btn) return;
+      filterWrap.querySelectorAll('.filter-pill').forEach(function (p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      currentCat = btn.dataset.cat;
+      applyFilters();
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+    sortSelect.addEventListener('change', applySort);
+  })();
+</script>

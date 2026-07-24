@@ -1,0 +1,22 @@
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="{{ '/' | relative_url }}" class="brand" aria-label="Volunteer Engagement Consulting home">
+      <img class="brand-logo" src="{{ '/assets/images/logo-navy.png' | relative_url }}" alt="Volunteer Engagement Consulting logo">
+      <span class="brand-text">
+        <span class="line1">VOLUNTEER ENGAGEMENT</span><br>
+        <span class="line2">— CONSULTING —</span>
+      </span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}#home" class="nav-link">Home</a></li>
+        <li><a href="{{ '/' | relative_url }}#about" class="nav-link">About</a></li>
+        <li><a href="{{ '/' | relative_url }}#services" class="nav-link">Services</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}" class="nav-link{% if page.layout == 'post' or page.url == '/blog/' %} active{% endif %}">Insights</a></li>
+        <li><a href="{{ '/' | relative_url }}#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="{{ '/' | relative_url }}#contact" class="nav-cta">Book a Consultation</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span></button>
+  </div>
+</header>

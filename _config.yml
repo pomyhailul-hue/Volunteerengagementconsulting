@@ -1,0 +1,100 @@
+# =============================================================================
+# Volunteer Engagement Consulting — Jekyll site configuration
+# Docs: https://jekyllrb.com/docs/configuration/
+# =============================================================================
+
+title: Volunteer Engagement Consulting
+description: >-
+  Volunteer Engagement Consulting partners with nonprofits, healthcare
+  organizations, governments, and mission-driven organizations to design
+  resilient, compliant, and people-centered volunteer programs.
+
+# --- IMPORTANT: set these two for GitHub Pages -----------------------------
+# If this repo is served at https://<user>.github.io/  -> url: "https://<user>.github.io", baseurl: ""
+# If this repo is served at https://<user>.github.io/<repo>/ -> url: "https://<user>.github.io", baseurl: "/<repo>"
+url: "https://your-username.github.io"
+baseurl: ""
+
+# --- Author (used by jekyll-seo-tag / schema.org) --------------------------
+author:
+  name: Hayat Nawd
+logo: /assets/images/logo-navy.png
+
+# --- Social links — replace with your real profile URLs -------------------
+# These feed the footer icons, the Contact page icons, and the blog share buttons.
+social:
+  instagram: "https://instagram.com/YOUR_HANDLE"
+  facebook: "https://facebook.com/YOUR_PAGE"
+  linkedin: "https://linkedin.com/company/YOUR_COMPANY"
+  twitter: ""   # optional, leave blank to hide the X/Twitter share button
+
+# --- Buy Me a Coffee --------------------------------------------------------
+buymeacoffee:
+  url: "https://www.buymeacoffee.com/YOUR_USERNAME"
+
+# --- Giscus (GitHub Discussions-powered comments) --------------------------
+# Create the discussion category at https://giscus.app after enabling
+# Discussions on your GitHub repo, then paste the generated values below.
+giscus:
+  repo: "your-username/your-repo"
+  repo_id: "REPLACE_WITH_REPO_ID"
+  category: "Blog Comments"
+  category_id: "REPLACE_WITH_CATEGORY_ID"
+  mapping: "pathname"
+  theme: "light"
+
+# --- Blog categories (for reference / nav — assigned per-post in front matter)
+categories_list:
+  - Volunteer Engagement
+  - Volunteer Retention
+  - Volunteer Onboarding
+  - Volunteer Communication
+  - Volunteer Leadership
+  - Volunteer Program Design
+  - Volunteer Management
+  - Compliance & Governance
+  - Best Practices
+
+# --- Reading time -----------------------------------------------------------
+words_per_minute: 200
+
+# --- Permalinks --------------------------------------------------------------
+permalink: /blog/:title/
+
+# --- Plugins (all whitelisted on GitHub Pages) ------------------------------
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
+
+# --- Defaults ----------------------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      image: /assets/images/blog-placeholder.png
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+# --- Markdown ------------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README-DEPLOY.md
+  - node_modules
+  - vendor
