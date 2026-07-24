@@ -346,7 +346,7 @@ title: Volunteer Engagement Consulting
   .page-hero{
     background:var(--navy); color:#fff; padding:158px 0 84px; position:relative; overflow:hidden;
   }
-  .page-hero .pattern-layer{ opacity:0.07; }
+  .page-hero .pattern-layer{ opacity:0.05; }
   .page-hero .eyebrow{ color:var(--gold); }
   .page-hero h1{ color:#fff; font-size:clamp(32px,4.6vw,54px); margin-top:16px; font-weight:800; }
   .page-hero p{ color:rgba(255,255,255,0.78); margin-top:18px; max-width:580px; font-size:16px; font-weight:400; }
@@ -363,29 +363,30 @@ title: Volunteer Engagement Consulting
   .founder-credentials .cred b{ font-size:22px; color:var(--navy); font-weight:800; display:block; }
   .founder-credentials .cred span{ font-size:11.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.06em; }
   @media(max-width:880px){ .founder-section{ grid-template-columns:1fr; gap:40px; } }
-
+.founder-wrapper{ padding-bottom:40px; }
   .values-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
   @media(max-width:960px){ .values-grid{ grid-template-columns:1fr 1fr; } }
   @media(max-width:560px){ .values-grid{ grid-template-columns:1fr; } }
   .mission-vision-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:900px; margin:0 auto; }
   @media(max-width:640px){ .mission-vision-grid{ grid-template-columns:1fr; } }
-  .value-card{ text-align:left; border-radius:var(--radius); overflow:hidden; display:flex; flex-direction:column; height:100%; }
-  .value-card .arch-top{ height:90px; flex-shrink:0; background:var(--sand); border-radius:100px 100px 0 0; }
-.value-card .body{
+  .value-card{ text-align:left; border-radius:var(--radius); overflow:hidden; display:flex; flex-direction:column; height:100%; min-height:410px; min-width:0; }
+  .value-card .arch-top{ height:90px; min-height:90px; flex-shrink:0; background:var(--sand); border-radius:50% 50% 0 0; }
+  .value-card .body{
     background:#fff;
     border:1px solid var(--line);
     border-top:none;
     padding:32px 28px 36px;
     border-radius:0 0 var(--radius) var(--radius);
-    min-height:320px;
+    flex:1;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:flex-start;
+    box-sizing:border-box;
 }
   .value-card h4{
     font-size:24px;
     font-weight:700;
-    margin-bottom:18px;
+    margin:0 0 18px;
     color:var(--navy);
 }
 
@@ -394,6 +395,7 @@ title: Volunteer Engagement Consulting
     line-height:1.8;
     color:var(--ink-soft);
     font-weight:400;
+    margin:0;
 }
 
   .timeline{ display:flex; justify-content:space-between; position:relative; margin-top:24px; flex-wrap:wrap; gap:30px; }
@@ -749,14 +751,14 @@ title: Volunteer Engagement Consulting
     <div class="container">
       <div class="mission-vision-grid">
         <div class="value-card reveal">
-          <div class="arch-top"></div>
+          <div class="arch-top" style="background:var(--gold);"></div>
           <div class="body">
             <h4>Our Mission</h4>
             <p>To empower organizations with strategic volunteer engagement solutions that strengthen governance, ensure compliance, and create lasting community impact through resilient, people-centered volunteer programs.</p>
           </div>
         </div>
         <div class="value-card reveal">
-          <div class="arch-top" style="background:#c9d3c2;"></div>
+          <div class="arch-top" style="background:var(--sage);"></div>
           <div class="body">
             <h4>Our Vision</h4>
             <p>To create a future where every organization has the systems, leadership, and confidence to build volunteer programs that are sustainable, impactful, and valued as strategic assets within their communities.</p>
@@ -765,7 +767,6 @@ title: Volunteer Engagement Consulting
       </div>
     </div>
   </section>
-
   <section style="background:var(--sand-l); position:relative;">
     <div class="pattern-layer dark" aria-hidden="true" style="opacity:0.04;"></div>
     <div class="container" style="position:relative;">
@@ -774,28 +775,28 @@ title: Volunteer Engagement Consulting
       </div>
       <div class="values-grid">
         <div class="value-card reveal">
-          <div class="arch-top"></div>
+<div class="arch-top" style="background:var(--navy);"></div>
           <div class="body">
             <h4>Purpose</h4>
             <p>Building meaningful volunteer programs that strengthen communities and advance organizational missions.</p>
           </div>
         </div>
         <div class="value-card reveal">
-          <div class="arch-top" style="background:#c9d3c2;"></div>
+<div class="arch-top" style="background:var(--sage);"></div>
           <div class="body">
             <h4>Excellence</h4>
             <p>We combine strategic thinking with practical expertise to deliver solutions that are effective, sustainable, and measurable.</p>
           </div>
         </div>
         <div class="value-card reveal">
-          <div class="arch-top" style="background:#e3d3ba;"></div>
+<div class="arch-top" style="background:var(--gold);"></div>
           <div class="body">
             <h4>Partnership</h4>
             <p>Strong volunteer programs are built through collaboration. We work alongside our clients as trusted advisors, empowering teams to succeed.</p>
           </div>
         </div>
         <div class="value-card reveal">
-          <div class="arch-top" style="background:var(--sand);"></div>
+<div class="arch-top" style="background:var(--sand);"></div>
           <div class="body">
             <h4>Integrity</h4>
             <p>Trust is the foundation of every relationship. We act with transparency, accountability, and professionalism in every engagement.</p>
@@ -876,7 +877,7 @@ title: Volunteer Engagement Consulting
             <li>90-day corrective roadmap if under threshold</li>
           </ul>
         </div>
-        <a href="#contact" class="btn btn-gold" onclick="goTo('contact')">Inquire About This Service</a>
+        <a href="#contact" class="btn btn-navy" onclick="goTo('contact')">Inquire About This Service</a>
       </div>
 
       <div class="tier reveal">
