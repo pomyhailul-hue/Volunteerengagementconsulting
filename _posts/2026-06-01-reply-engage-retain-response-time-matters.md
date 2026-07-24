@@ -2,6 +2,7 @@
 title: "Reply. Engage. Retain: Why Response Time Matters in Volunteering"
 date: 2026-06-01 09:00:00 -0400
 category: Volunteer Retention
+image: https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop
 description: "How quickly you respond to volunteers can be the key to retaining them long-term."
 ---
 
@@ -50,8 +51,3 @@ Volunteers are offering one of the most generous things they can give—their ti
 
 At Volunteer Engagement Consulting, we help organizations build systems that treat every volunteer interaction with the urgency and care it deserves. Because engagement starts at the first connection.
 
-Enjoyed this post? Support My Consulting Journey!
-
-Hey there! I've recently launched my own consulting business, and I'm excited to share insights, tips, and real-world lessons as I grow. If you found this content helpful or inspiring, consider supporting and Buy Me a Coffee.
-
-Every coffee helps fuel the mission — one idea at a time. Thanks for being part of the journey!

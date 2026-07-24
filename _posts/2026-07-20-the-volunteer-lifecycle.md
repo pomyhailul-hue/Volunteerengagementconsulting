@@ -2,6 +2,7 @@
 title: "The Volunteer Lifecycle—And How to Support Every Stage"
 date: 2026-07-20 09:00:00 -0400
 category: Best Practices
+image: https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop
 description: "Every volunteer journey has stages: recruitment, onboarding, engagement, and exit. But many organizations focus mainly on the beginning, leaving the rest of the journey overlooked."
 ---
 
@@ -30,9 +31,3 @@ A heartfelt thank you, public recognition, or a small token of appreciation can 
 Map out your volunteer lifecycle and align your communication with each stage. Just like donors, volunteers deserve a relationship journey—not just a role. Their experience should be cohesive and fulfilling from start to finish.
 
 Not sure where the gaps are in your volunteer lifecycle? Let's walk through it together. Schedule a free consultation, and I'll help you create a strategy that maximizes engagement and retention.
-
-Enjoyed this post? Support My Consulting Journey!
-
-Hey there! I've recently launched my own consulting business, and I'm excited to share insights, tips, and real-world lessons as I grow. If you found this content helpful or inspiring, consider supporting and Buy Me a Coffee.
-
-Every coffee helps fuel the mission — one idea at a time. Thanks for being part of the journey!
