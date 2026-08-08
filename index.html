@@ -417,8 +417,7 @@ title: Volunteer Engagement Consulting
   .tier p.desc{ color:var(--ink-soft); font-size:14.5px; max-width:560px; font-weight:400; }
   .tier ul{ margin-top:18px; }
   .tier ul li{ font-size:13.5px; color:var(--ink); position:relative; padding-left:20px; margin-bottom:8px; font-weight:400; }
-  .tier ul li::before{ content:'—'; position:absolute; left:0; color:var(--sage); }
-  @media(max-width:760px){ .tier{ grid-template-columns:1fr; } }
+.tier ul li::before{ content:''; position:absolute; left:2px; top:7px; width:6px; height:6px; background:var(--gold); transform:rotate(45deg); }  @media(max-width:760px){ .tier{ grid-template-columns:1fr; } }
 
   .process-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:30px; margin-top:10px; }
   @media(max-width:880px){ .process-grid{ grid-template-columns:1fr 1fr; } }
@@ -458,6 +457,7 @@ title: Volunteer Engagement Consulting
     background:linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
     display:flex; align-items:center; justify-content:center;
   }
+  .featured-post .fp-image svg{ width:56px; height:56px; opacity:0.85; position:relative; z-index:1; }
   .featured-post .fp-image svg{ width:56px; height:56px; opacity:0.85; position:relative; z-index:1; }
   .featured-post .fp-body{ padding:44px; display:flex; flex-direction:column; justify-content:center; }
   .featured-post .fp-body h3{ font-size:26px; margin:16px 0 14px; line-height:1.3; }
@@ -536,6 +536,7 @@ title: Volunteer Engagement Consulting
         <li><a href="#about" class="nav-link" data-page="about" onclick="goTo('about')">About</a></li>
         <li><a href="#services" class="nav-link" data-page="services" onclick="goTo('services')">Services</a></li>
         <li><a href="#insights" class="nav-link" data-page="insights" onclick="goTo('insights')">Insights</a></li>
+        <li><a href="#testimonials" class="nav-link" data-page="testimonials" onclick="goTo('testimonials')">Testimonials</a></li>
         <li><a href="#contact" class="nav-link" data-page="contact" onclick="goTo('contact')">Contact</a></li>
       </ul>
     </nav>
@@ -569,12 +570,11 @@ title: Volunteer Engagement Consulting
         <div class="reveal">
           <div class="kicker-line"></div>
           <div class="eyebrow">Who We Are</div>
-          <h2 style="margin-top:12px;">A specialist consultancy</h2>
-          <p class="muted" style="margin-top:20px; font-size:16px;">Volunteer Engagement Consulting exists to help organizations build volunteer programs that are compliant, resilient, and built for long-term impact. Rather than focusing only on recruitment, we build the governance frameworks, retention systems, and compliance infrastructure that let volunteer programs scale with confidence.</p>
+          <h2 style="margin-top:12px;">Building Impactful Volunteer Programs</h2>
+          <p class="muted" style="margin-top:20px; font-size:16px;">We help organizations build impactful volunteer programs through strategy, structure, and intentional engagement.</p>
         </div>
         <div class="reveal">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop" alt="Consulting team reviewing a volunteer program strategy in a leadership meeting" loading="lazy">
-        </div>
+<img src="https://images.unsplash.com/photo-1722963220475-979db2dbf216?q=80&w=1000&auto=format&fit=crop" alt="Volunteers standing together in a circle, hands joined in solidarity">        </div>
       </div>
     </div>
   </section>
@@ -584,27 +584,27 @@ title: Volunteer Engagement Consulting
     <div class="container" style="position:relative;">
       <div class="sec-head center reveal">
         <div class="eyebrow">Who We Work With</div>
-        <h2>Every organization's compliance and retention pressures look different.</h2>
-        <p>Start with the environment closest to yours, we tailor governance and retention frameworks to the regulatory and operational realities of each sector.</p>
+        <h2>Tailored Strategies for Every Volunteer Program</h2>
+        <p>No two organizations engage volunteers the same way. We partner with mission-driven organizations to assess their needs, strengthen their systems, and develop customized volunteer engagement strategies that support growth, sustainability, and community impact.</p>
       </div>
       <div class="card-grid">
         <div class="card audience-card reveal">
           <div class="icon-box" style="background:#dfe7db;"><svg viewBox="0 0 24 24" fill="none" stroke="#637958" stroke-width="1.8"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2" stroke-linecap="round"/></svg></div>
           <h3>Hospice Programs</h3>
-          <p>CMS compliance audits and the 5% volunteer utilization requirement, handled before it becomes a survey finding.</p>
+          <p>Expert guidance to help hospice organizations build compliant volunteer programs, meet CMS 5% volunteer requirements, and stay survey-ready year-round.</p>
           <a href="#services" class="btn-text learn-more" onclick="goTo('services')">Explore Hospice Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="card audience-card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" stroke-linejoin="round"/></svg></div>
-          <h3>Hospital Systems</h3>
-          <p>Operational reviews and patient-support volunteer structures that hold up across departments and shifts.</p>
-          <a href="#services" class="btn-text learn-more" onclick="goTo('services')">Explore Hospital Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke-linecap="round"/><circle cx="17" cy="9" r="2.3"/><path d="M15.5 14.2c2.7.4 4.8 2.3 4.8 5.3" stroke-linecap="round"/></svg></div>
+          <h3>Nonprofit Solutions</h3>
+          <p>Strategic volunteer engagement solutions that help nonprofits build, strengthen, and scale sustainable volunteer programs through strategic planning, volunteer recruitment and retention, program assessments, board reporting, grant readiness, and organizational capacity-building that advances your mission.</p>
+          <a href="#services" class="btn-text learn-more" onclick="goTo('services')">Explore Nonprofit Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="card audience-card reveal">
           <div class="icon-box" style="background:#f3e3cf;"><svg viewBox="0 0 24 24" fill="none" stroke="#cb7924" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Nonprofit &amp; Corporate CSR</h3>
-          <p>Board reporting, funder due diligence, and multi-site rollout, solved before growth outpaces your program's structure.</p>
-          <a href="#services" class="btn-text learn-more" onclick="goTo('services')">Explore Nonprofit Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <h3>Corporate Social Responsibility (CSR)</h3>
+          <p>Customized employee volunteer and CSR strategies that align business goals with community needs while enhancing employee engagement, brand reputation, and social impact.</p>
+          <a href="#services" class="btn-text learn-more" onclick="goTo('services')">Explore CSR Support <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
     </div>
@@ -615,28 +615,28 @@ title: Volunteer Engagement Consulting
       <div class="sec-head reveal">
         <div class="kicker-line"></div>
         <div class="eyebrow">Why Choose Us</div>
-        <h2>Trusted expertise, built for organizations that can't afford to get it wrong.</h2>
+        <h2>Your partner in building meaningful volunteer engagement, expanding impact, and advancing your mission.</h2>
       </div>
       <div class="why-grid reveal">
         <div class="why-card">
           <div class="num">01</div>
           <h3>Strategic Expertise</h3>
-          <p>A decade of hands-on volunteer leadership, translated into frameworks built for real operational conditions.</p>
+          <p>From launching new volunteer programs to optimizing established ones, we help organizations build sustainable, high-impact volunteer engagement strategies that advance their mission.</p>
         </div>
         <div class="why-card">
           <div class="num">02</div>
           <h3>Compliance-Driven Solutions</h3>
-          <p>Governance and documentation designed to hold up under CMS review and organizational audit alike.</p>
+          <p>Helping hospice organizations build sustainable volunteer programs that support CMS 5% volunteer compliance through strategic planning, documentation, recruitment, engagement, reporting, and volunteer services that enhance patient and family care.</p>
         </div>
         <div class="why-card">
           <div class="num">03</div>
           <h3>Customized Volunteer Frameworks</h3>
-          <p>No templates. Every engagement is scoped to your organization's structure, risk profile, and growth stage.</p>
+          <p>Every engagement is tailored to your organization's structure, goals, and mission.</p>
         </div>
         <div class="why-card">
           <div class="num">04</div>
           <h3>Sustainable Community Impact</h3>
-          <p>Programs built to run independent of any one coordinator, so impact compounds instead of resetting with every staff change.</p>
+          <p>By investing in strategic volunteer engagement, nonprofits and corporations can strengthen communities, foster meaningful partnerships, and create lasting social impact.</p>
         </div>
       </div>
     </div>
@@ -649,10 +649,10 @@ title: Volunteer Engagement Consulting
         <div class="eyebrow" style="color:var(--gold);">By the Numbers</div>
       </div>
       <div class="stat-band">
-        <div class="item reveal"><b>120+</b><span>Organizations Served</span></div>
-        <div class="item reveal"><b>10 yrs</b><span>Field Experience</span></div>
-        <div class="item reveal"><b>$167B</b><span>Annual Value of U.S. Volunteerism</span></div>
-        <div class="item reveal"><b>5%</b><span>CMS Utilization Threshold, Audit-Ready</span></div>
+        <div class="item reveal"><b>$1,000,000+</b><span>Saved</span></div>
+        <div class="item reveal"><b>40,000+</b><span>Volunteers Engaged</span></div>
+        <div class="item reveal"><b>500+</b><span>Corporate, Nonprofit &amp; Community Partners Engaged</span></div>
+        <div class="item reveal"><b>100+</b><span>Volunteer Programs, Events &amp; Community Initiatives Supported</span></div>
       </div>
     </div>
   </section>
@@ -670,23 +670,28 @@ title: Volunteer Engagement Consulting
           <div class="tc-track" id="tcTrack">
             <div class="testimonial tc-slide" aria-hidden="false">
               <span class="quote-mark">&ldquo;</span>
-              <p>Before working with VEC, our utilization rate was a guessing game every survey cycle. Now we have a documentation trail that holds up before an auditor ever asks for it.</p>
-              <div class="attrib">— Director of Volunteer Services, Regional Hospice Network</div>
+              <p>I've never seen someone so gently wield such stellar character and incredible leadership acumen, demonstrating how to pivot at a moment's notice in the midst of unexpected crises.</p>
+              <div class="attrib">— Imani W.</div>
             </div>
             <div class="testimonial tc-slide" aria-hidden="true">
               <span class="quote-mark">&ldquo;</span>
-              <p>VEC didn't hand us a template. They scoped a framework around our actual staffing ratios and rebuilt our onboarding around the 90-day drop-off point specifically.</p>
-              <div class="attrib">— Volunteer Program Manager, Community Hospital System</div>
+              <p>Hayat is professional, calm under pressure, and has a natural ability to connect with people and bring teams together.</p>
+              <div class="attrib">— Nadya M.</div>
             </div>
             <div class="testimonial tc-slide" aria-hidden="true">
               <span class="quote-mark">&ldquo;</span>
-              <p>We'd outgrown our original volunteer structure and didn't know it until VEC's operational review showed us exactly where. The rollout plan they built is still what we run on.</p>
-              <div class="attrib">— Director of Community Engagement, Regional Nonprofit</div>
+              <p>Hayat's ability to engage and mobilize volunteers is unparalleled. She consistently demonstrated a passion for fostering community connections and creating opportunities for meaningful service.</p>
+              <div class="attrib">— Brandon G.</div>
             </div>
             <div class="testimonial tc-slide" aria-hidden="true">
               <span class="quote-mark">&ldquo;</span>
-              <p>What stood out was how VEC treated compliance and culture as the same problem, not competing priorities. Our board finally has the reporting they've been asking for.</p>
-              <div class="attrib">— Chief Operations Officer, Mission-Driven Organization</div>
+              <p>Her expertise in utilizing volunteerism within the nonprofit environment is unmatched and I highly recommend her!</p>
+              <div class="attrib">— Eve S.</div>
+            </div>
+            <div class="testimonial tc-slide" aria-hidden="true">
+              <span class="quote-mark">&ldquo;</span>
+              <p>Ms. Nawd possesses the rare ability to build systems, cultivate teams, and drive meaningful outcomes.</p>
+              <div class="attrib">— Elijah A.</div>
             </div>
           </div>
         </div>
@@ -751,14 +756,9 @@ title: Volunteer Engagement Consulting
           <div class="eyebrow">Founder</div>
           <h2 style="margin-top:10px; font-size:32px;">Hayat Nawd</h2>
           <p class="muted" style="margin-top:6px; font-weight:700; color:var(--navy); font-size:15px;">Founder &amp; Principal Consultant</p>
-          <p class="muted" style="margin-top:18px; font-size:15.5px;">Hayat Nawd brings over a decade of hands-on volunteer coordination experience to the governance frameworks that help hospice, hospital, nonprofit, and corporate volunteer programs become compliant, resilient, and people-centered.</p>
-          <p class="muted" style="margin-top:14px; font-size:15.5px;">Her journey began in the field, coordinating volunteers, managing schedules, and navigating compliance requirements, where she discovered that successful volunteer programs are built on both compassion and structure. That experience shaped the consulting philosophy behind Volunteer Engagement Consulting: practical solutions grounded in real-world operations.</p>
-          <p class="muted" style="margin-top:14px; font-size:15.5px;">Today, Hayat advises executive teams, boards, and volunteer leaders on designing governance structures that strengthen compliance, improve retention, and enable volunteer programs to grow without losing their purpose or culture.</p>
-          <div class="founder-credentials">
-            <div class="cred"><b>120+</b><span>Organizations Advised</span></div>
-            <div class="cred"><b>10 yrs</b><span>Practice Experience</span></div>
-            <div class="cred"><b>2016</b><span>Practice Founded</span></div>
-          </div>
+          <p class="muted" style="margin-top:18px; font-size:15.5px;">Hayat Nawd learned early that service works best when it's organized. Growing up in Ethiopia, she watched her parents mobilize their community, often accompanying her mother as she ran fundraising drives and collected donations for orphans, vulnerable families, and people in need. That lesson became the foundation for everything she's built since.</p>
+<p class="muted" style="margin-top:14px; font-size:15.5px;">She paired that instinct with formal training: a degree in Public Policy with a concentration in Nonprofit Leadership from Georgia State University, a Certified Nonprofit Professional (CNP) credential earned in 2013, and a Master of Public Health from the Addis Institute of Public Health. Over more than 15 years leading volunteer engagement at organizations including Blue Summit Hospice and Palliative Care, Open Hand Atlanta, the International Rescue Committee in Atlanta, the National Multiple Sclerosis Society, and The King Center, she saw the same pattern everywhere: good intentions undermined by programs with no governance behind them. That gap is why she founded Volunteer Engagement Consulting, giving hospice organizations a clear path to the CMS 5% requirement, and giving corporations employee volunteer programs that turn goodwill into measurable community impact.</p>
+<p class="muted" style="margin-top:14px; font-size:15.5px;">She still practices what she teaches, leading Kuraz Collective Inc. to help seniors access resources and navigate citizenship, and volunteering monthly with Woman Watch Afrika. Outside of work, she's usually chasing down a good cup of coffee or an old bookstore, convinced every used book has a story worth finding.</p>
         </div>
       </div>
     </div>
@@ -770,15 +770,13 @@ title: Volunteer Engagement Consulting
           <div class="arch-top" style="background:var(--gold);"></div>
           <div class="body">
             <h4>Our Mission</h4>
-            <p>To empower organizations with strategic volunteer engagement solutions that strengthen governance, ensure compliance, and create lasting community impact through resilient, people-centered volunteer programs.</p>
-          </div>
+<p>To equip mission-driven organizations with the strategies, tools, and expertise needed to build impactful volunteer programs that inspire service, strengthen communities, and create lasting change.</p>          </div>
         </div>
         <div class="value-card reveal">
           <div class="arch-top" style="background:var(--sage);"></div>
           <div class="body">
             <h4>Our Vision</h4>
-            <p>To create a future where every organization has the systems, leadership, and confidence to build volunteer programs that are sustainable, impactful, and valued as strategic assets within their communities.</p>
-          </div>
+<p>To create a future where every organization has the systems, leadership, and confidence to build volunteer programs that are sustainable, impactful, and drive meaningful community impact.</p>          </div>
         </div>
       </div>
     </div>
@@ -864,19 +862,24 @@ title: Volunteer Engagement Consulting
     <div class="container">
       <div class="sec-head reveal">
         <div class="kicker-line"></div>
-        <div class="eyebrow">Engagement Tiers</div>
-        <h2>Three ways to strengthen your program</h2>
+        <div class="eyebrow">Our Services</div>
+        <h2>Strategic support built around your program's specific needs</h2>
       </div>
 
       <div class="tier reveal">
         <div>
-          <div class="tag">Retention Design</div>
-          <h3>Protect Your Volunteer Retention Rate From Day One</h3>
-          <p class="desc">Onboarding, training, and recognition design that keeps new volunteers engaged well past the 90-day drop-off point.</p>
+          <div class="tag">Program Strategy</div>
+          <h3>Volunteer Program Strategy &amp; Development</h3>
+          <p class="desc">Build, strengthen, and scale volunteer programs that advance your mission. We help organizations create sustainable volunteer programs that align with their goals, culture, and community needs.</p>
+          <p style="font-weight:700; color:var(--navy); margin:18px 0 8px; font-size:13.5px;">Services include:</p>
           <ul>
-            <li>Onboarding journey audit and redesign</li>
-            <li>Volunteer handbook &amp; role clarity documents</li>
-            <li>Recognition cadence and retention scorecard</li>
+            <li>New volunteer program development and launch</li>
+            <li>Existing volunteer program assessment and enhancement</li>
+            <li>Volunteer recruitment and retention strategies</li>
+            <li>Volunteer roles, processes, and systems development</li>
+            <li>Volunteer policies and procedures</li>
+            <li>Engagement strategies to maximize volunteer impact</li>
+            <li>Impact measurement and reporting</li>
           </ul>
         </div>
         <a href="#contact" class="btn btn-navy" onclick="goTo('contact')">Inquire About This Service</a>
@@ -885,12 +888,19 @@ title: Volunteer Engagement Consulting
       <div class="tier reveal">
         <div>
           <div class="tag">Compliance</div>
-          <h3>Meet Your 5% CMS Requirement, Audit-Ready</h3>
-          <p class="desc">A focused audit and compliance framework for hospice volunteer utilization, built to hold up under CMS scrutiny.</p>
+          <h3>Hospice CMS 5% Compliance Solutions</h3>
+          <p class="desc">Strengthen volunteer programs while supporting compliance, survey readiness, and exceptional patient and family care. We help develop and maintain effective volunteer programs that support the CMS 5% volunteer requirement, strengthen volunteer engagement, and ensure survey readiness.</p>
+          <p style="font-weight:700; color:var(--navy); margin:18px 0 8px; font-size:13.5px;">Services include:</p>
           <ul>
-            <li>Utilization-rate audit against current census</li>
-            <li>Documentation &amp; survey-readiness framework</li>
-            <li>90-day corrective roadmap if under threshold</li>
+            <li>CMS 5% volunteer compliance assessments</li>
+            <li>Volunteer program audits and gap analysis</li>
+            <li>Volunteer utilization reviews</li>
+            <li>Compliance readiness assessments</li>
+            <li>Documentation and reporting guidance</li>
+            <li>Volunteer recruitment and engagement strategies</li>
+            <li>Volunteer program improvement plans</li>
+            <li>Survey readiness support and compliance preparation</li>
+            <li>Strategic guidance for sustainable volunteer programs</li>
           </ul>
         </div>
         <a href="#contact" class="btn btn-navy" onclick="goTo('contact')">Inquire About This Service</a>
@@ -898,76 +908,24 @@ title: Volunteer Engagement Consulting
 
       <div class="tier reveal">
         <div>
-          <div class="tag">Program Scale</div>
-          <h3>Grow Your Program Without Losing Its Culture</h3>
-          <p class="desc">Operational reviews and strategic coaching for organizations that have outgrown their original volunteer structure.</p>
+          <div class="tag">CSR &amp; Community</div>
+          <h3>Corporate Social Responsibility (CSR) &amp; Community Engagement</h3>
+          <p class="desc">Create meaningful employee volunteer experiences that drive community impact. We help corporations design and strengthen employee volunteer and CSR programs that connect employees with purpose, build nonprofit partnerships, and create measurable community impact.</p>
+          <p style="font-weight:700; color:var(--navy); margin:18px 0 8px; font-size:13.5px;">Services include:</p>
           <ul>
-            <li>Org-structure &amp; staffing-ratio review</li>
-            <li>Multi-site or multi-department rollout plan</li>
-            <li>Leadership coaching for program managers</li>
+            <li>CSR strategy development</li>
+            <li>Employee volunteer program design</li>
+            <li>Day of Service and community impact initiatives</li>
+            <li>Employee volunteer event planning and coordination</li>
+            <li>Nonprofit and community partner connections through our network</li>
+            <li>Corporate volunteer opportunities</li>
+            <li>Skills-based volunteer engagement strategies</li>
+            <li>Employee engagement initiatives</li>
+            <li>Community partnership development</li>
+            <li>Volunteer impact measurement and reporting</li>
           </ul>
         </div>
         <a href="#contact" class="btn btn-navy" onclick="goTo('contact')">Inquire About This Service</a>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:var(--sand-l); position:relative;">
-    <div class="pattern-layer dark" aria-hidden="true" style="opacity:0.04;"></div>
-    <div class="container" style="position:relative;">
-      <div class="sec-head reveal">
-        <div class="eyebrow">Full Capability Set</div>
-        <h2>Consulting across the full volunteer lifecycle</h2>
-      </div>
-      <div class="services-list-full">
-        <div class="card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M4 20V10M12 20V4M20 20v-7" stroke-linecap="round"/></svg></div>
-          <h3 style="font-size:16.5px;">Volunteer Program Design</h3>
-          <p style="font-size:13.5px;">Structuring new programs from the ground up, with clear roles, workflows, and reporting.</p>
-          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-        <div class="card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M3 12h4l3 8 4-16 3 8h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3 style="font-size:16.5px;">Engagement Strategy</h3>
-          <p style="font-size:13.5px;">Recruitment, onboarding, and recognition strategies calibrated to your volunteer base.</p>
-          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-        <div class="card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M9 12l2 2 4-4M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" stroke-linejoin="round"/></svg></div>
-          <h3 style="font-size:16.5px;">Risk &amp; Compliance</h3>
-          <p style="font-size:13.5px;">Utilization audits, documentation review, and survey-readiness for regulated environments.</p>
-          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-        <div class="card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg></div>
-          <h3 style="font-size:16.5px;">Policies &amp; Frameworks</h3>
-          <p style="font-size:13.5px;">Handbooks, role documentation, and governance policies your program can run on regardless of staff turnover.</p>
-          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-        <div class="card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3 style="font-size:16.5px;">Capacity Building &amp; Training</h3>
-          <p style="font-size:13.5px;">Leadership coaching and staff training that build lasting internal capability.</p>
-          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-        <div class="card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M3 3v18h18M7 15l4-4 4 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3 style="font-size:16.5px;">Program Evaluation</h3>
-          <p style="font-size:13.5px;">Retention scorecards and outcome measurement tied directly to organizational goals.</p>
-          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-        <div class="card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><path d="M12 2l2.4 5.5L20 8l-4 4.2.9 6L12 15.8 7.1 18.2l.9-6L4 8l5.6-.5z" stroke-linejoin="round"/></svg></div>
-          <h3 style="font-size:16.5px;">Governance Support</h3>
-          <p style="font-size:13.5px;">Board- and executive-level guidance on volunteer program oversight and accountability.</p>
-          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
-        <div class="card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#032448" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3 style="font-size:16.5px;">Custom Consulting</h3>
-          <p style="font-size:13.5px;">Tailored engagements for organizations with unique operational or regulatory needs.</p>
-          <a href="#contact" class="btn-text learn-more" onclick="goTo('contact')">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
       </div>
     </div>
   </section>
@@ -976,28 +934,28 @@ title: Volunteer Engagement Consulting
     <div class="container">
       <div class="sec-head reveal">
         <div class="eyebrow">Our Engagement Process</div>
-        <h2>A clear, four-step path</h2>
+        <h2>A clear, strategic four-step path to strengthen your volunteer program.</h2>
       </div>
       <div class="process-grid">
         <div class="process-step reveal">
           <div class="num">01</div>
           <h4>Discovery Call</h4>
-          <p>A 30-minute conversation to understand your program, pressures, and timeline.</p>
+          <p>A 30-minute conversation to learn about your organization, volunteer program goals, current challenges, and priorities.</p>
         </div>
         <div class="process-step reveal">
           <div class="num">02</div>
-          <h4>Operational Audit</h4>
-          <p>We review documentation, utilization data, and current volunteer workflows.</p>
+          <h4>Program Assessment</h4>
+          <p>We review your current volunteer systems, documentation, processes, engagement strategies, and program data to identify strengths and opportunities for improvement.</p>
         </div>
         <div class="process-step reveal">
           <div class="num">03</div>
-          <h4>Roadmap</h4>
-          <p>A prioritized plan tied to your compliance deadlines or growth targets.</p>
+          <h4>Strategic Roadmap</h4>
+          <p>We develop a customized action plan with clear recommendations, priorities, and next steps aligned with your mission, growth goals, or compliance needs.</p>
         </div>
         <div class="process-step reveal">
           <div class="num">04</div>
           <h4>Implementation Support</h4>
-          <p>Hands-on coaching as your team puts the framework into practice.</p>
+          <p>We provide guidance, coaching, and ongoing support to help your team successfully implement strategies, strengthen operations, and build a sustainable volunteer program.</p>
         </div>
       </div>
     </div>
@@ -1023,7 +981,6 @@ title: Volunteer Engagement Consulting
     <div class="container">
       <div class="eyebrow">Insights</div>
       <h1>Practical notes from the field.</h1>
-      <p>Short, specific writing on retention, compliance, and program design — for the people actually running volunteer programs.</p>
     </div>
   </section>
 
@@ -1040,15 +997,12 @@ title: Volunteer Engagement Consulting
       </div>
       <a class="post-card-link" href="{{ featured.url | relative_url }}">
         <div class="featured-post reveal">
-          <div class="fp-image">
-            <div class="pattern-layer" aria-hidden="true"></div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><path d="M4 19.5V6a2 2 0 012-2h9l5 5v10.5a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 014 19.5z" stroke-linejoin="round"/><path d="M15 4v4a1 1 0 001 1h4" stroke-linejoin="round"/></svg>
-          </div>
+          <div class="fp-image" style="background-image:url('{{ featured.image }}'); background-size:cover; background-position:center;">
+        </div>
           <div class="fp-body">
             <span class="cat-badge">{{ featured.category }}</span>
             <h3>{{ featured.title }}</h3>
             <p class="pc-excerpt">{{ featured.description }}</p>
-            <div class="pc-meta"><span>{{ featured.date | date: "%b %-d, %Y" }}</span><span class="dot"></span><span>{{ read_time }} min read</span></div>
           </div>
         </div>
       </a>
@@ -1071,17 +1025,74 @@ title: Volunteer Engagement Consulting
       <div class="newsletter-band reveal" style="margin-top:56px;">
         <div class="pattern-layer" aria-hidden="true" style="opacity:0.05;"></div>
         <div>
-          <h3>Download our free 5-Point Volunteer Onboarding Checklist</h3>
-          <p>One page. No fluff. Sent straight to your inbox along with the monthly field-notes newsletter.</p>
+          <h3>Sign Up for Insights</h3>
+          <p>Receive practical resources, expert tips, and monthly field notes delivered directly to your inbox.</p>
         </div>
-        <a href="#" class="btn btn-gold" onclick="handleFormSubmit(event)">Get the Guide</a>
+        <a href="#" class="btn btn-gold" onclick="handleFormSubmit(event)">Sign Up</a>
       </div>
 
     </div>
   </section>
 
 </main>
+<main id="page-testimonials" class="page">
 
+  <section class="page-hero">
+    <div class="pattern-layer" aria-hidden="true"></div>
+    <div class="container">
+      <div class="eyebrow">Testimonials</div>
+      <h1>What clients and partners say.</h1>
+      <p>Feedback from the organizations and colleagues Hayat has worked alongside.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="max-width:820px;">
+
+      <div class="card reveal" style="padding:36px 40px; margin-bottom:28px;">
+        <span class="quote-mark" style="font-size:56px; color:var(--sage); line-height:0.5; display:block; margin-bottom:14px; font-weight:800;">&ldquo;</span>
+        <p class="muted" style="font-size:16px; line-height:1.75;">I had the extreme pleasure of working with Hayat Nawd extensively in preparation for an annual celebratory volunteer event. Through her masterful guidance, she spearheaded an extraordinary national service project comprised of hundreds of volunteer and community partners, both in-person and virtually.<br><br>I've never seen someone so gently wield such stellar character and incredible leadership acumen, demonstrating how to pivot at a moment's notice in the midst of unexpected crises. As the director of volunteer services at one of the premier humanitarian organizations in our world, her exemplary influence is second only to her immeasurable compassion. She exudes a charismatic demeanor that can extract greatness from the mundane and craft a masterpiece that was once hidden under layers of self-doubt. She is the epitome of restoration and reconciliation in motion.<br><br>Our work together was seamlessly collaborative, and she proved that social action is not what she does; it's embedded within the fibers of her being. Her resourcefulness has greatly expanded the vision and value of every endeavor that has been entrusted to her hands. Even when offering insight through courageous conversations, her supervisory style is both affirming and reflective. She models how to be introspective without leaning into self-effacement.<br><br>Hayat is both fearless and faithful, wise and warmhearted. One interaction with her has the power to leave an indelible imprint on your life for years to come.</p>
+        <div class="attrib" style="margin-top:20px; font-weight:600; color:var(--navy);">— Imani W.</div>
+      </div>
+
+      <div class="card reveal" style="padding:36px 40px; margin-bottom:28px;">
+        <span class="quote-mark" style="font-size:56px; color:var(--sage); line-height:0.5; display:block; margin-bottom:14px; font-weight:800;">&ldquo;</span>
+        <p class="muted" style="font-size:16px; line-height:1.75;">I've had the chance to work with Hayat since 2023. Hayat has been key in helping my team of volunteers contribute to the success of events.<br><br>Thanks to her leadership and guidance, our volunteers were able to bring their professionalism and skills to these projects in a way that was truly supported. They not only felt appreciated but also valued the opportunity to contribute to such meaningful causes, making their experience both impactful and fulfilling.<br><br>Hayat is professional, calm under pressure, and has a natural ability to connect with people and bring teams together. I've genuinely enjoyed working with her and look forward to continuing our collaboration on an even greater level in the future.</p>
+        <div class="attrib" style="margin-top:20px; font-weight:600; color:var(--navy);">— Nadya M.</div>
+      </div>
+
+      <div class="card reveal" style="padding:36px 40px; margin-bottom:28px;">
+        <span class="quote-mark" style="font-size:56px; color:var(--sage); line-height:0.5; display:block; margin-bottom:14px; font-weight:800;">&ldquo;</span>
+        <p class="muted" style="font-size:16px; line-height:1.75;">I had the privilege of collaborating with Hayat Nawd in my role as Community Relations Manager. Hayat played a pivotal role in facilitating our participation in MLK Day service projects. Her exceptional organizational skills and unwavering commitment to community service ensured that our initiatives were not only well-executed but also deeply impactful.<br><br>Hayat's ability to engage and mobilize volunteers is unparalleled. She consistently demonstrated a passion for fostering community connections and creating opportunities for meaningful service.<br><br>Working alongside Hayat was both inspiring and rewarding. Her professionalism, coupled with her genuine care for the community, makes her an invaluable asset to any organization. I wholeheartedly recommend Hayat for any role that requires a dynamic leader with a proven track record in volunteer engagement and community development.</p>
+        <div class="attrib" style="margin-top:20px; font-weight:600; color:var(--navy);">— Brandon G.</div>
+      </div>
+
+      <div class="card reveal" style="padding:36px 40px; margin-bottom:28px;">
+        <span class="quote-mark" style="font-size:56px; color:var(--sage); line-height:0.5; display:block; margin-bottom:14px; font-weight:800;">&ldquo;</span>
+        <p class="muted" style="font-size:16px; line-height:1.75;">Hayat was knowledgeable, professional, and organized. She not only was a pleasure to work with, but also provided expert guidance on how best to utilize volunteerism within an organization to grow its mission and support. She is also an outstanding leader who encourages both professional growth and institutional growth through volunteerism.<br><br>In summary, my personal experience working with Hayat was extremely impactful, both personally and professionally. She guided me from becoming a volunteer to an employee. Her expertise in utilizing volunteerism within the nonprofit environment is unmatched and I highly recommend her!</p>
+        <div class="attrib" style="margin-top:20px; font-weight:600; color:var(--navy);">— Eve S.</div>
+      </div>
+
+      <div class="card reveal" style="padding:36px 40px;">
+        <span class="quote-mark" style="font-size:56px; color:var(--sage); line-height:0.5; display:block; margin-bottom:14px; font-weight:800;">&ldquo;</span>
+        <p class="muted" style="font-size:16px; line-height:1.75;">I had the privilege of working with Ms. Hayat where I employed Excel and R to analyze volunteer and outreach data. Ms. Nawd not only welcomed these insights but strategically incorporated them into programmatic decision-making, enhancing volunteer engagement and strengthening community initiatives. Throughout this process, she empowered me with genuine responsibility and ownership over my contributions.<br><br>I observed her leadership firsthand during high-profile events that she managed with remarkable poise and a systems-oriented approach. While the execution appeared seamless, it was the result of meticulous planning and coordination under her guidance.<br><br>Ms. Nawd developed and operationalized our volunteer program in its entirety, establishing policies, training protocols, reporting systems, and risk management procedures. She led multiple initiatives, events, internship programs, and cultivated high-impact partnerships with corporate, faith-based, and educational organizations that significantly expanded our institutional capacity. Her outreach strategy, which encompassed volunteer fairs, public speaking engagements, social media, and web-based communications, ensured a steady and engaged volunteer pipeline. Simultaneously, her collaboration with internal teams elevated our standards for volunteer management practices.<br><br>In sum, Ms. Nawd possesses the rare ability to build systems, cultivate teams, and drive meaningful outcomes.</p>
+        <div class="attrib" style="margin-top:20px; font-weight:600; color:var(--navy);">— Elijah A.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div class="pattern-layer dark" aria-hidden="true" style="opacity:0.05;"></div>
+        <h3>Curious what a strategic volunteer program looks like for your organization?</h3>
+        <a href="#contact" class="btn btn-navy" onclick="goTo('contact')">Schedule a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+</main>
 <!-- ============ CONTACT ============ -->
 <main id="page-contact" class="page">
 
@@ -1181,8 +1192,7 @@ title: Volunteer Engagement Consulting
             <span class="line2">— CONSULTING —</span>
           </span>
         </a>
-        <p>Building compliant, resilient, and impactful volunteer programs for hospices, hospitals, and mission-driven organizations.</p>
-        <div class="social-row">
+<p>Your Partner in Advancing Volunteer Excellence and Building Sustainable Programs That Drive Organizational Impact</p>        <div class="social-row">
           <a href="{{ site.social.linkedin | default: '#' }}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5.01A2.5 2.5 0 014.98 3.5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.9 8.65 22 10.9 22 14.05V21h-4v-6.3c0-1.5-.03-3.42-2.08-3.42-2.08 0-2.4 1.63-2.4 3.31V21H9z"/></svg></a>
           <a href="{{ site.social.facebook | default: '#' }}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.3c0-.87.24-1.46 1.5-1.46h1.6V3.9c-.28-.04-1.24-.12-2.36-.12-2.33 0-3.93 1.42-3.93 4.03V10.5H8v3h2.31V21h3.19z"/></svg></a>
           <a href="{{ site.social.instagram | default: '#' }}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5.01-4.73.07-.97.04-1.5.2-1.85.34-.46.18-.8.4-1.15.75-.35.35-.57.69-.75 1.15-.14.35-.3.88-.34 1.85-.06 1.23-.07 1.58-.07 4.73s.01 3.5.07 4.73c.04.97.2 1.5.34 1.85.18.46.4.8.75 1.15.35.35.69.57 1.15.75.35.14.88.3 1.85.34 1.23.06 1.58.07 4.73.07s3.5-.01 4.73-.07c.97-.04 1.5-.2 1.85-.34.46-.18.8-.4 1.15-.75.35-.35.57-.69.75-1.15.14-.35.3-.88.34-1.85.06-1.23.07-1.58.07-4.73s-.01-3.5-.07-4.73c-.04-.97-.2-1.5-.34-1.85a3.1 3.1 0 00-.75-1.15 3.1 3.1 0 00-1.15-.75c-.35-.14-.88-.3-1.85-.34-1.23-.06-1.58-.07-4.73-.07zm0 4.15a5.85 5.85 0 110 11.7 5.85 5.85 0 010-11.7zm0 1.8a4.05 4.05 0 100 8.1 4.05 4.05 0 000-8.1zm6.08-1.98a1.37 1.37 0 11-2.73 0 1.37 1.37 0 012.73 0z"/></svg></a>
@@ -1196,6 +1206,7 @@ title: Volunteer Engagement Consulting
           <li><a href="#home" onclick="goTo('home')">Home</a></li>
           <li><a href="#about" onclick="goTo('about')">About</a></li>
           <li><a href="#services" onclick="goTo('services')">Services</a></li>
+          <li><a href="#testimonials" onclick="goTo('testimonials')">Testimonials</a></li>
           <li><a href="#insights" onclick="goTo('insights')">Insights</a></li>
           <li><a href="#contact" onclick="goTo('contact')">Contact</a></li>
         </ul>
@@ -1203,10 +1214,9 @@ title: Volunteer Engagement Consulting
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="#services" onclick="goTo('services')">Retention Design</a></li>
+          <li><a href="#services" onclick="goTo('services')">Program Strategy</a></li>
           <li><a href="#services" onclick="goTo('services')">Compliance</a></li>
-          <li><a href="#services" onclick="goTo('services')">Program Scale</a></li>
-          <li><a href="#services" onclick="goTo('services')">Custom Consulting</a></li>
+          <li><a href="#services" onclick="goTo('services')">CSR &amp; Community</a></li>
         </ul>
       </div>
       <div>
@@ -1220,8 +1230,6 @@ title: Volunteer Engagement Consulting
     </div>
     <div class="footer-bottom">
       <span>© 2026 Volunteer Engagement Consulting. All Rights Reserved.</span>
-      <span>Building Impactful Volunteer Programs.</span>
-    </div>
   </div>
 </footer>
 
