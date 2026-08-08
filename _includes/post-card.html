@@ -2,9 +2,6 @@
   Usage: {% include post-card.html post=some_post %}
 {% endcomment %}
 {% assign p = include.post %}
-{% assign words = p.content | strip_html | number_of_words %}
-{% assign read_time = words | divided_by: site.words_per_minute %}
-{% if read_time == 0 %}{% assign read_time = 1 %}{% endif %}
 <a class="post-card-link" href="{{ p.url | relative_url }}">
   <div class="post-card" data-category="{{ p.category | slugify }}" data-title="{{ p.title | downcase }}">
     <div class="pc-image" style="background-image:url('{{ p.image }}'); background-size:cover; background-position:center;">
@@ -13,11 +10,6 @@
       <span class="cat-badge">{{ p.category }}</span>
       <h3>{{ p.title }}</h3>
       <p class="pc-excerpt">{{ p.description }}</p>
-      <div class="pc-meta">
-        <span>{{ p.date | date: "%b %-d, %Y" }}</span>
-        <span class="dot"></span>
-        <span>{{ read_time }} min read</span>
-      </div>
     </div>
   </div>
 </a>
