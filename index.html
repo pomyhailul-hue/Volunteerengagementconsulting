@@ -1039,7 +1039,10 @@ section{padding:90px 0;}
           <h3>Sign Up for Insights</h3>
           <p>Receive practical resources, expert tips, and monthly field notes delivered directly to your inbox.</p>
         </div>
-        <a href="#" class="btn btn-gold" onclick="handleFormSubmit(event)">Sign Up</a>
+        <form class="newsletter-inline-form" action="https://formspree.io/f/xljrjedn" method="POST" style="display:flex; gap:10px; flex-wrap:wrap; position:relative; z-index:1;">
+          <input type="email" required name="Email Address" placeholder="Your email address" aria-label="Email address" style="padding:14px 18px; border-radius:100px; border:none; font-family:var(--sans); font-size:13.5px; min-width:220px;">
+          <button type="submit" class="btn btn-gold">Sign Up</button>
+        </form>
       </div>
 
     </div>
