@@ -36,10 +36,10 @@ buymeacoffee:
 # Create the discussion category at https://giscus.app after enabling
 # Discussions on your GitHub repo, then paste the generated values below.
 giscus:
-  repo: "your-username/your-repo"
-  repo_id: "REPLACE_WITH_REPO_ID"
-  category: "Blog Comments"
-  category_id: "REPLACE_WITH_CATEGORY_ID"
+  repo: "pomyhailul-hue/Volunteerengagementconsulting"
+  repo_id: "R_kgDOTfSF2g"
+  category: "Announcements"
+  category_id: "DIC_kwDOTfSF2s4DC-Mx"
   mapping: "pathname"
   theme: "light"
 
