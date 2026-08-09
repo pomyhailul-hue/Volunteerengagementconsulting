@@ -35,13 +35,21 @@ buymeacoffee:
 # --- Giscus (GitHub Discussions-powered comments) --------------------------
 # Create the discussion category at https://giscus.app after enabling
 # Discussions on your GitHub repo, then paste the generated values below.
-giscus:
-  repo: "your-username/your-repo"
-  repo_id: "REPLACE_WITH_REPO_ID"
-  category: "Blog Comments"
-  category_id: "REPLACE_WITH_CATEGORY_ID"
-  mapping: "pathname"
-  theme: "light"
+<script src="https://giscus.app/client.js"
+        data-repo="pomyhailul-hue/Volunteerengagementconsulting"
+        data-repo-id="R_kgDOTfSF2g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOTfSF2s4DC-Mx"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
 
 # --- Blog categories (for reference / nav — assigned per-post in front matter)
 categories_list:
