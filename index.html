@@ -300,7 +300,16 @@ section{padding:90px 0;}
   .tc-arrow svg{ width:18px; height:18px; }
   .tc-prev{ left:-22px; }
   .tc-next{ right:-22px; }
-  @media(max-width:900px){ .tc-prev{ left:4px; } .tc-next{ right:4px; } }
+@media(max-width:900px){
+  .tc-prev{ left:4px; }
+  .tc-next{ right:4px; }
+}
+@media(max-width:640px){
+  .testimonial{ padding:52px 56px; }
+  .tc-arrow{ width:36px; height:36px; }
+  .tc-prev{ left:0px; }
+  .tc-next{ right:0px; }
+}
   .tc-dots{ display:flex; justify-content:center; align-items:center; gap:10px; margin-top:28px; }
   .tc-dot{ width:9px; height:9px; border-radius:50%; background:var(--line); border:none; padding:0; cursor:pointer; transition:all .2s ease; }
   .tc-dot:hover{ background:var(--sage); }
