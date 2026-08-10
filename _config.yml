@@ -12,8 +12,8 @@ description: >-
 # --- IMPORTANT: set these two for GitHub Pages -----------------------------
 # If this repo is served at https://<user>.github.io/  -> url: "https://<user>.github.io", baseurl: ""
 # If this repo is served at https://<user>.github.io/<repo>/ -> url: "https://<user>.github.io", baseurl: "/<repo>"
-url: "https://pomyhailul-hue.github.io"
-baseurl: "/Volunteerengagementconsulting"
+url: "https://volunteerengagementconsulting.com"
+baseurl: ""
 
 # --- Author (used by jekyll-seo-tag / schema.org) --------------------------
 author:
