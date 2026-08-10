@@ -2,7 +2,7 @@
 title: "The Volunteer Program Blind Spot You Didn't Know You Had"
 date: 2026-07-13 09:00:00 -0400
 category: Volunteer Management
-image: https://images.unsplash.com/photo-1580281657702-257584239a55?q=80&w=1200&auto=format&fit=crop
+image: https://images.unsplash.com/photo-1560220604-1985ebfe28b1?q=80&w=1200&auto=format&fit=crop
 description: "Volunteers aren't mind readers. If you're not defining the role clearly, you're unintentionally setting them (and your organization) up for confusion, frustration, and disengagement."
 ---
 
